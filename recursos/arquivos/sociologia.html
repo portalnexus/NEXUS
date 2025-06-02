@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sociologia - Arquivos - Nexus</title>
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,700;1,400&family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+<div id="page-wrapper">
+    <nav>
+        <ul>
+            <li><a href="../../index.html">Página Inicial</a></li>
+            <li><a href="../../recursos.html">Recursos</a></li>
+            <li><a href="../../desafios.html">Desafios</a></li>
+            <li><a href="../../midias.html">Mídias</a></li>
+            <li><a href="../../sobre.html">Sobre o Nexus</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h1>Sociologia - Arquivos</h1>
+        <nav class="sub-nav">
+            <a href="../../index.html">Home</a>
+            <a href="../../recursos.html">Recursos</a>
+        </nav>
+        <h2>Arquivos de Sociologia</h2>
+        <ul>
+            <li>
+                <span>Sample PDF Document</span>
+                <button class="openPdfButton" data-pdf-url="sample.pdf">Abrir PDF</button>
+            </li>
+            <!-- More PDFs will be listed here -->
+        </ul>
+        <p>Conteúdo em breve.</p>
+    </div> <!-- /.container -->
+    <canvas id="matrixCanvas"></canvas>
+    <script src="../../matrix-rain.js" defer></script>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Nexus. Todos os direitos reservados.</p>
+            <p><a href="../../sobre.html">Sobre o Nexus</a></p>
+        </div>
+    </footer>
+    <div id="pdfModal" style="display:none; position:fixed; z-index:1000; left:0; top:0; width:100%; height:100%; overflow:auto; background-color:rgba(0,0,0,0.5);">
+        <div style="background-color:#fefefe; margin:5% auto; padding:20px; border:1px solid #888; width:80%; height:90%;">
+            <span id="closeModal" style="color:#aaa; float:right; font-size:28px; font-weight:bold; cursor:pointer;">&times;</span>
+            <canvas id="pdfCanvas" style="width:100%; height:calc(100% - 40px);"></canvas>
+            <div>
+                <button id="prevPage">Anterior</button>
+                <button id="nextPage">Próxima</button>
+                <span>Página: <span id="page_num"></span> / <span id="page_count"></span></span>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+    <script>
+    // Set worker path
+    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
+
+    const pdfModal = document.getElementById('pdfModal');
+    const closeModal = document.getElementById('closeModal');
+    const pdfCanvas = document.getElementById('pdfCanvas');
+    const prevPageButton = document.getElementById('prevPage');
+    const nextPageButton = document.getElementById('nextPage');
+    const pageNumSpan = document.getElementById('page_num');
+    const pageCountSpan = document.getElementById('page_count');
+
+    let pdfDoc = null;
+    let pageNum = 1;
+    let pageRendering = false;
+    let pageNumPending = null;
+    const scale = 1.5;
+    const ctx = pdfCanvas.getContext('2d');
+
+    function renderPage(num) {
+        pageRendering = true;
+        pdfDoc.getPage(num).then(function(page) {
+            const viewport = page.getViewport({scale: scale});
+            pdfCanvas.height = viewport.height;
+            pdfCanvas.width = viewport.width;
+
+            const renderContext = {
+                canvasContext: ctx,
+                viewport: viewport
+            };
+            const renderTask = page.render(renderContext);
+
+            renderTask.promise.then(function() {
+                pageRendering = false;
+                if (pageNumPending !== null) {
+                    renderPage(pageNumPending);
+                    pageNumPending = null;
+                }
+            });
+        });
+        pageNumSpan.textContent = num;
+    }
+
+    function queueRenderPage(num) {
+        if (pageRendering) {
+            pageNumPending = num;
+        } else {
+            renderPage(num);
+        }
+    }
+
+    prevPageButton.addEventListener('click', function() {
+        if (pageNum <= 1) {
+            return;
+        }
+        pageNum--;
+        queueRenderPage(pageNum);
+    });
+
+    nextPageButton.addEventListener('click', function() {
+        if (pageNum >= pdfDoc.numPages) {
+            return;
+        }
+        pageNum++;
+        queueRenderPage(pageNum);
+    });
+
+    closeModal.onclick = function() {
+        pdfModal.style.display = "none";
+        if (pdfDoc) {
+            pdfDoc.destroy(); // Clean up
+            pdfDoc = null;
+        }
+    }
+
+    window.onclick = function(event) {
+        if (event.target == pdfModal) {
+            pdfModal.style.display = "none";
+            if (pdfDoc) {
+                pdfDoc.destroy();
+                pdfDoc = null;
+            }
+        }
+    }
+
+    document.querySelectorAll('.openPdfButton').forEach(button => {
+        button.addEventListener('click', function() {
+            const pdfUrl = this.getAttribute('data-pdf-url');
+            pdfModal.style.display = "block";
+            pageNum = 1; // Reset to first page
+
+            pdfjsLib.getDocument(pdfUrl).promise.then(function(pdfDoc_) {
+                pdfDoc = pdfDoc_;
+                pageCountSpan.textContent = pdfDoc.numPages;
+                renderPage(pageNum);
+            }).catch(function(error) {
+                console.error('Error loading PDF: ' + error.message);
+                alert('Erro ao carregar PDF: ' + error.message + '. Verifique se o arquivo sample.pdf existe em ./sample.pdf');
+                pdfModal.style.display = "none";
+            });
+        });
+    });
+    </script>
+</div> <!-- /#page-wrapper -->
+<div id="theme-config-icon" title="Configurar Tema">⚙️</div>
+<div id="theme-selector-panel" class="hidden">
+    <h3>Escolha um Tema:</h3>
+    <button data-theme="theme-default" title="Tema Padrão Green Circuit">Green Circuit</button>
+    <button data-theme="theme-digital-blue-green" title="Tema Digital Blue-Green">Digital Blue-Green</button>
+    <button data-theme="theme-retro-terminal" title="Tema Retro Terminal">Retro Terminal</button>
+</div>
+<script src="../../theme-switcher.js" defer></script>
+</body>
+</html>
