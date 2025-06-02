@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <title>Nexus - Desafios</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,700;1,400&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="page-wrapper">
+  <nav>
+    <ul>
+      <li><a href="index.html">Página Inicial</a></li>
+      <li><a href="recursos.html">Recursos</a></li>
+      <li><a href="desafios.html">Desafios</a></li>
+      <li><a href="midias.html">Mídias</a></li>
+      <li><a href="sobre.html">Sobre o Nexus</a></li>
+    </ul>
+  </nav>
+  <div class="container">
+    <h1>Desafios Nexus</h1>
+    <p>Explore nossos desafios por disciplina e nível de dificuldade. Teste seus conhecimentos e divirta-se aprendendo!</p>
+    <section class="quick-nav">
+        <div class="quick-links-grid">
+            <a href="desafios_matematica.html" class="quick-link-button">Matemática</a>
+            <a href="desafios_programacao_robotica.html" class="quick-link-button">Programação e Robótica</a>
+        </div>
+    </section>
+  </div> <!-- /.container -->
+</div> <!-- /#page-wrapper -->
+<canvas id="matrixCanvas"></canvas>
+<script src="matrix-rain.js" defer></script>
+<footer>
+  <div class="container">
+    <p>&copy; 2025 Nexus. <a href="index.html">Página Inicial</a></p>
+  </div>
+</footer>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+            // customised options
+            delimiters: [
+                {left: "\\[", right: "\\]", display: true},  // LaTeX display math
+                {left: "\\(", right: "\\)", display: false}  // LaTeX inline math
+            ],
+            // LaTeX-2TRIG would be another option if more complex macros are needed
+            // trust: (context) => /^https$/.test(context.command), // Not needed for basic math
+            throwOnError: false // So an error in one equation doesn't break all rendering
+        });
+    });
+</script>
+<div id="theme-config-icon" title="Configurar Tema">⚙️</div>
+<div id="theme-selector-panel" class="hidden">
+    <h3>Escolha um Tema:</h3>
+    <button data-theme="theme-default" title="Tema Padrão Green Circuit">Green Circuit</button>
+    <button data-theme="theme-digital-blue-green" title="Tema Digital Blue-Green">Digital Blue-Green</button>
+    <button data-theme="theme-retro-terminal" title="Tema Retro Terminal">Retro Terminal</button>
+    <button data-theme="theme-light-classic-neon-red" title="Tema Light Classic Neon Red">Light Classic</button>
+</div>
+<script src="theme-switcher.js" defer></script>
+</body>
+</html>

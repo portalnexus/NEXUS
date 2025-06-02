@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <title>Nexus - Página Inicial</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,700;1,400&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="page-wrapper">
+  <nav>
+    <ul>
+      <li><a href="index.html">Página Inicial</a></li>
+      <li><a href="recursos.html">Recursos</a></li>
+      <li><a href="desafios.html">Desafios</a></li>
+      <li><a href="midias.html">Mídias</a></li>
+      <li><a href="sobre.html">Sobre o Nexus</a></li>
+    </ul>
+  </nav>
+  <!-- Adding a placeholder for the container div that will be added later for structure -->
+  <div class="container">
+    <h1>Bem-vindo ao Nexus!</h1>
+    <p>Adentre o Nexus, seu portal para uma nova dimensão de aprendizado. Convidamos você a decifrar os códigos do conhecimento matemático e a desbloquear novos níveis em desafios de programação, robótica e outras áreas do saber, navegando por uma interface rica em recursos educacionais.</p>
+
+            <!-- New Quick Navigation Section -->
+            <section class="quick-nav">
+                <h2>Acesso Rápido</h2>
+                <div class="quick-links-grid">
+                    <a href="recursos.html" class="quick-link-button">Recursos</a>
+                    <a href="desafios.html" class="quick-link-button">Desafios</a>
+                    <a href="midias.html" class="quick-link-button">Mídias</a>
+                    <a href="sobre.html" class="quick-link-button">Sobre o Nexus</a>
+                </div>
+            </section>
+
+            <section class="content-feature">
+                <h2>Mídias em Destaque</h2>
+                <p>Uma prévia dos nossos momentos e trabalhos. Visite a seção <a href="midias.html">Mídias</a> para ver mais!</p>
+            </section>
+
+            <section class="content-feature">
+                <h2>Desafio da Semana</h2>
+                <p><strong>Título do Desafio:</strong> [Ainda não revelado]</p>
+                <p><strong>Descrição:</strong> O novo desafio é lançado todo domingo às 09:00. Prepare-se!</p>
+                <div id="weekly-challenge-timer" style="font-size: 1.2rem; color: var(--link-color); margin-top: 10px;">
+                    Tempo restante: <span id="countdown">Calculando...</span>
+                </div>
+            </section>
+  </div> <!-- /.container -->
+</div> <!-- /#page-wrapper -->
+<canvas id="matrixCanvas"></canvas>
+<script src="matrix-rain.js" defer></script>
+<footer>
+  <div class="container">
+    <p>&copy; 2025 Nexus. <a href="index.html">Página Inicial</a></p>
+  </div>
+</footer>
+<div id="theme-config-icon" title="Configurar Tema">⚙️</div>
+<div id="theme-selector-panel" class="hidden">
+    <h3>Escolha um Tema:</h3>
+    <button data-theme="theme-default" title="Tema Green Circuit">Green Circuit</button>
+    <button data-theme="theme-digital-blue-green" title="Tema Digital Blue-Green">Digital Blue-Green</button>
+    <button data-theme="theme-retro-terminal" title="Tema Retro Terminal">Retro Terminal</button>
+    <button data-theme="theme-light-classic-neon-red" title="Tema Light Classic Neon Red">Light Classic</button>
+</div>
+<script src="theme-switcher.js" defer></script>
+<script src="weekly-challenge-timer.js" defer></script>
+</body>
+</html>

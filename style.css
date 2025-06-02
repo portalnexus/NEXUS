@@ -1,0 +1,742 @@
+html {
+    font-size: clamp(14px, 12px + 0.5vw, 18px); /* Base for rem units */
+}
+
+/* CSS Custom Properties for Theming */
+:root {
+    /* Paleta Green Circuit */
+    --primary-bg-color: #0D0D0D;                     /* Preto muito escuro / Cinza carvão */
+    --content-box-bg-color: rgba(0, 0, 0, 0.75);     /* Preto com 75% de opacidade */
+    --main-text-color: #E0E0E0;                      /* Cinza claro quase branco */
+    --secondary-text-color: #AAAAAA;                 /* Cinza médio */
+    --heading-text-color: #FFFFFF;                   /* Branco para h1-h6 dentro do container */
+    --container-border-color: #008000;               /* Verde circuito mais escuro */
+    --link-color: #39FF14;                           /* Verde neon (usado no KaTeX e links no container) */
+    --link-hover-color: #FFFF00;                     /* Amarelo neon para hover de links */
+    
+    --matrix-rain-actual-color: #00FF00;             /* Cor da chuva de código em si */
+    --katex-text-color: #39FF14;                     /* Cor do texto KaTeX (já é verde neon) */
+    --katex-text-shadow-color: rgba(0, 30, 0, 0.7);  /* Sombra do texto KaTeX */
+
+    /* Font Families (já definidas, mas podem ser variáveis também se quisermos temas com fontes diferentes) */
+    --font-family-headings: 'Press Start 2P', monospace;
+    --font-family-body: 'Fira Sans', sans-serif;
+    --font-family-monospace: monospace; /* Para a chuva de código no canvas, se quisermos controlar via CSS */
+
+    /* Outras variáveis que podem ser úteis */
+    --container-padding: 25px; /* This is not a font size, will remain px */
+    --container-border-radius: 5px; /* Not a font size */
+    --container-max-width: 960px; /* Not a font size */
+    --container-margin-top-bottom: 40px; /* Not a font size */
+
+    /* Cores para botões/UI do seletor de tema (a serem usadas depois) */
+    --theme-selector-bg-color: #2a2a2a;
+    --theme-selector-text-color: #E0E0E0;
+    --theme-selector-hover-bg-color: #00FF00;
+    --theme-selector-hover-text-color: #000000;
+}
+
+/* O restante do style.css virá depois disto */
+/* Original body - mostly overridden by later body rule or Matrix canvas */
+body {
+    font-family: var(--font-family-body); 
+    line-height: 1.6; /* Unitless, good */
+    margin: 1.25rem; /* 20px -> 1.25rem. Will be overridden by later body rule margin:0 */
+    background-color: var(--primary-bg-color); 
+    color: var(--main-text-color); 
+}
+
+/* Original structural tags - these are very generic and likely overridden */
+/* header, section, footer are general. nav is handled more specifically below. */
+header, section, footer { 
+    margin-bottom: 1.25rem; /* 20px -> 1.25rem */
+    padding: 0.9375rem; /* 15px -> 0.9375rem */
+    background-color: var(--content-box-bg-color); 
+    border: 1px solid var(--container-border-color); 
+}
+
+/* Original h1 - likely overridden by later h1 or .container h1 */
+h1 {
+    color: var(--heading-text-color); 
+}
+
+/* nav ul and nav ul li rules are more specific below */
+
+/* Original nav a - This is a very generic rule, the more specific one below is primary */
+/* nav a {
+    text-decoration: none;
+    color: var(--link-color); 
+}
+
+nav a:hover {
+    text-decoration: underline;
+    color: var(--link-hover-color); 
+} */
+
+/* style.css additions - Article styling (these are more specific) */
+article {
+    background-color: var(--content-box-bg-color); 
+    border: 1px solid var(--container-border-color);    
+    border-radius: var(--container-border-radius);        
+    padding: var(--container-padding);             
+    margin-bottom: 1.5625rem;  /* 25px -> 1.5625rem */     
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); 
+}
+
+/* article h2 and h3 are now handled by the general h2, h3 rules below using var(--font-family-headings) */
+
+article p, article ul, article ol {
+    margin-bottom: 0.9375rem; /* 15px -> 0.9375rem */ 
+    font-size: 1rem;      /* 1em (assuming parent is 1rem) -> 1rem */
+    line-height: 1.6; /* Unitless, good */
+    color: var(--main-text-color);         
+}
+
+article ul, article ol {
+    padding-left: 1.25rem; /* 20px -> 1.25rem */
+}
+
+article ul li, article ol li {
+    margin-bottom: 0.5rem; /* 8px -> 0.5rem */
+}
+
+/* Styling for solution/details sections */
+details {
+    background-color: rgba(0,0,0,0.3); 
+    border: 1px solid var(--secondary-text-color); 
+    border-radius: var(--container-border-radius); 
+    padding: 0.625rem; /* 10px -> 0.625rem */
+    margin-top: 0.625rem; /* 10px -> 0.625rem */
+}
+
+details summary {
+    font-weight: bold;
+    cursor: pointer;
+    color: var(--link-color); 
+    font-size: 1rem; /* Ensure summary text is also scalable */
+    line-height: 1.5; /* Unitless */
+}
+
+details summary:hover {
+    color: var(--link-hover-color); 
+}
+
+/* Main navigation styling */
+nav {
+    background-color: var(--content-box-bg-color); /* Updated */
+    padding: 0.75rem 1.5rem; /* Updated from 0.625rem 0.9375rem */
+    border-bottom: 2px solid var(--container-border-color); /* Added */
+    /* border-radius: var(--container-border-radius); REMOVED for sharp full-width bar */
+    /* text-align: center; /* If items aren't centering via flex on ul, but ul should handle it */
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0; /* Ensured no default ul margin */
+    display: flex; 
+    justify-content: center; 
+    flex-wrap: wrap; 
+}
+
+nav ul li {
+    /* display: inline; Removed, not needed for flex item */
+    margin-right: 1rem; /* Updated from 0.9375rem */
+    margin-left: 1rem;  /* Updated from 0.9375rem */
+}
+
+/* nav ul li:last-child { margin-right: 0; } /* Not needed with symmetrical margins */
+
+nav a {
+    font-family: var(--font-family-headings); 
+    font-size: 0.875rem; /* Kept existing rem value which is approx 14px */
+    text-transform: uppercase; 
+    color: var(--link-color); /* Ensured */
+    text-decoration: none; /* Ensured */
+    padding: 0.5rem 0; /* Add some vertical padding for better click targets if needed */
+}
+
+nav a:hover {
+    color: var(--link-hover-color); 
+    text-decoration: underline; /* Ensured */
+}
+
+
+/* Body improvements for overall spacing and look (MAIN BODY RULE) */
+body {
+    font-family: var(--font-family-body); 
+    background-color: var(--primary-bg-color); 
+    color: var(--main-text-color); 
+    margin: 0; 
+    padding: 0; 
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-size: 1rem; /* Base font size for body content, making p, li effectively 1rem */
+    line-height: 1.6; /* Default line height for body text */
+}
+
+#page-wrapper {
+    flex-grow: 1;
+}
+
+/* Container for centered content */
+.container {
+    width: 80%;
+    max-width: var(--container-max-width); 
+    margin: var(--container-margin-top-bottom) auto; 
+    padding: var(--container-padding);     
+    background-color: var(--content-box-bg-color); 
+    border: 2px solid var(--matrix-rain-actual-color); 
+    border-radius: var(--container-border-radius);                 
+    color: var(--main-text-color);                     
+    font-family: var(--font-family-body); 
+}
+
+/* Text color overrides for elements within the .container */
+.container h1, 
+.container h2, 
+.container h3, 
+.container h4, 
+.container h5, 
+.container h6 {
+    color: var(--heading-text-color); 
+}
+
+.container p,
+.container li,
+.container div, 
+.container span,
+.container label { 
+    color: var(--main-text-color); 
+}
+
+.container article p, 
+.container article li {
+    color: var(--main-text-color); 
+}
+
+.container a {
+    color: var(--link-color); 
+    text-decoration: none; 
+}
+
+.container a:hover {
+    color: var(--link-hover-color); 
+    text-decoration: underline; 
+}
+
+.container strong, .container b {
+    color: var(--heading-text-color); 
+}
+
+/* Original structural tags - adjust padding/margin if they are inside .container */
+header, section#main-content { 
+    margin-bottom: 1.25rem; /* 20px -> 1.25rem */
+    padding: 0; 
+}
+
+/* Footer Styles */
+footer { /* This is the main footer, not the generic 'footer' tag rule from the top */
+    background-color: var(--primary-bg-color); 
+    color: var(--secondary-text-color); 
+    padding: 0.75rem 0; /* 20px -> 1.25rem */
+    text-align: center;
+    margin-top: 1.875rem; /* 30px -> 1.875rem */
+    border-top: 3px solid var(--matrix-rain-actual-color); 
+    font-family: var(--font-family-body); 
+}
+
+footer p {
+    margin: 0; /* 5px -> 0.3125rem */
+    font-size: 0.875rem; /* Approx 14px */
+    line-height: 1.5; /* Unitless */
+}
+
+footer a {
+    color: var(--link-color); 
+    text-decoration: underline;
+}
+
+footer a:hover {
+    color: var(--link-hover-color); 
+}
+
+/* Font Hierarchy for Retrogames Theme */
+
+/* Titles and Headers (General, outside .container or if not overridden) */
+/* Specific font sizes for Press Start 2P */
+h1 { 
+    font-family: var(--font-family-headings);
+    text-align: center; 
+    color: var(--heading-text-color); 
+    margin-bottom: 1.875rem; 
+    font-size: 2rem; 
+    line-height: 1.2; 
+} 
+h2 {
+    font-family: var(--font-family-headings);
+    font-size: 1.75rem; 
+    line-height: 1.2;
+    color: var(--heading-text-color); 
+    text-align: center; 
+    margin-bottom: 1.25rem; 
+}
+h3 {
+    font-family: var(--font-family-headings);
+    font-size: 1.5rem; 
+    line-height: 1.2;
+    color: var(--heading-text-color);
+    text-align: center; 
+    margin-bottom: 1rem; 
+}
+h4, h5, h6 { 
+    font-family: var(--font-family-headings);
+    font-size: 1.25rem;
+    line-height: 1.2;
+    color: var(--heading-text-color);
+    text-align: center;
+    margin-bottom: 0.75rem; 
+}
+
+/* Body text and common content elements (General, outside .container) */
+p, li, table, td, th { 
+    font-family: var(--font-family-body); 
+}
+
+p {
+    text-align: justify;
+    hyphens: auto;
+    -webkit-hyphens: auto; /* For Safari */
+    -ms-hyphens: auto; /* For IE/Edge */
+}
+
+.container p,
+.container li,
+.container .intro-text-block, /* For blocks like the intro on index.html */
+article p,
+article li {
+    text-align: justify;
+    hyphens: auto;
+    -webkit-hyphens: auto; /* For Safari */
+    -ms-hyphens: auto; /* For IE/Edge */
+}
+
+/* Specific override for article h2, h3 to match specific rem values from instructions */
+/* This rule for article h2 seems to make more sense for section titles within a page, 
+   rather than individual article titles.
+   The general .container h2 will apply to the section titles like "Videoteca" etc.
+   The .resource-card h3 will be specific to card titles.
+*/
+article h2 { /* This style is for a main heading within a standalone article page */
+    font-family: var(--font-family-headings); 
+    font-size: 1.6rem; 
+    line-height: 1.2;
+    color: var(--heading-text-color); 
+    border-bottom: 2px solid var(--secondary-text-color); 
+    padding-bottom: 0.625rem; 
+    margin-top: 0; 
+    text-align: left; 
+}
+article h3 { /* This style could be for subheadings within a standalone article page */
+    font-family: var(--font-family-headings); 
+    font-size: 1.3rem; 
+    line-height: 1.2;
+    color: var(--heading-text-color); 
+    margin-top: 1.25rem; 
+    margin-bottom: 0.625rem; 
+    text-align: left; 
+}
+
+/* Text within detail summaries (problem/challenge solutions) */
+details summary {
+    font-family: var(--font-family-body); 
+}
+
+
+/* KaTeX Styling for Retrogames Theme */
+.katex {
+    font-size: 1.1em; 
+    color: var(--katex-text-color);  
+    text-shadow: 1px 1px 2px var(--katex-text-shadow-color); 
+}
+
+.katex .mtable { 
+    color: var(--katex-text-color);
+}
+
+.katex .frac-line { 
+    border-bottom-color: var(--katex-text-color); 
+}
+
+
+/* Matrix Rain Canvas Styling */
+#matrixCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; 
+    display: block; 
+    background-color: var(--primary-bg-color); 
+}
+
+/* Theme Definitions */
+
+/* Paleta 2: Digital Blue-Green */
+body.theme-digital-blue-green {
+    --primary-bg-color: #101820;                     
+    --content-box-bg-color: rgba(20, 30, 40, 0.8);    
+    --main-text-color: #F0F0F0;                      
+    --secondary-text-color: #B0B0B0;                 
+    --heading-text-color: #FFFFFF;                   
+    --container-border-color: #00A388;               
+    /* --link-color: #00FFFF; */                     
+    --link-hover-color: #FFD700;                     
+}
+
+/* Paleta 3: Retro Terminal */
+body.theme-retro-terminal {
+    --primary-bg-color: #000000;                     
+    --content-box-bg-color: rgba(15, 15, 15, 0.9);    
+    --main-text-color: #F0F0F0;                      
+    --heading-text-color: #00FF00;                   
+    --secondary-text-color: #00A000;                 
+    --link-color: #FFFF00;                           
+    --link-hover-color: #FF00FF;                     
+    --container-border-color: #00FF00;               
+}
+
+body.theme-light-classic-neon-red {
+    --primary-bg-color: #FFFFFF;             /* Page background */
+    --content-box-bg-color: #F0F0F0;     /* Content box background */
+    --main-text-color: #000000;              /* Main text color */
+    --secondary-text-color: #444444;         /* Secondary text color */
+    --heading-text-color: #FF0000;           /* Neon Red for headings */
+    --container-border-color: #000000;       /* Black for container borders */
+    --link-color: #FF0000;                   /* Neon Red for links */
+    --link-hover-color: #DD0000;             /* Darker Neon Red for link hover */
+    --matrix-rain-actual-color: #FF0000;     /* Neon Red for matrix rain letters */
+
+    /* Theme selector specific colors for this theme */
+    --theme-selector-bg-color: #E0E0E0;      /* Light grey for selector panel */
+    --theme-selector-text-color: #000000;    /* Black text for selector panel */
+    --theme-selector-hover-bg-color: #FF0000; /* Neon Red for selector button hover */
+    --theme-selector-hover-text-color: #FFFFFF; /* White text for selector button hover */
+
+    /* KaTeX specific colors for this theme */
+    --katex-text-color: #000000;             /* Black for KaTeX text */
+    --katex-text-shadow-color: rgba(255, 0, 0, 0.3); /* Subtle Neon Red shadow for KaTeX */
+}
+
+/* Theme Selector UI Styling */
+
+#theme-config-icon {
+    position: fixed;
+    bottom: 1.25rem; /* 20px */
+    right: 1.25rem; /* 20px */
+    font-size: 1.5rem; /* 24px */
+    padding: 0.625rem; /* 10px */
+    background-color: var(--theme-selector-bg-color, #2a2a2a); 
+    color: var(--theme-selector-text-color, #E0E0E0);
+    border: 1px solid var(--container-border-color, #008000); 
+    border-radius: 50%; 
+    cursor: pointer;
+    z-index: 1000; 
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+#theme-config-icon:hover {
+    transform: rotate(45deg);
+    background-color: var(--theme-selector-hover-bg-color, #00FF00);
+    color: var(--theme-selector-hover-text-color, #000000);
+}
+
+#theme-selector-panel {
+    position: fixed;
+    bottom: 5rem; /* 80px */
+    right: 1.25rem; /* 20px */
+    width: 13.75rem; /* 220px */
+    background-color: var(--theme-selector-bg-color, #1c1c1c); 
+    border: 1px solid var(--container-border-color, #008000);
+    border-radius: var(--container-border-radius); /* 5px */
+    padding: 0.9375rem; /* 15px */
+    z-index: 999; 
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#theme-selector-panel.hidden {
+    display: none; 
+}
+
+#theme-selector-panel h3 {
+    margin-top: 0;
+    margin-bottom: 0.625rem; /* 10px */
+    font-size: 1rem; /* For Press Start 2P */
+    line-height: 1.2; /* Added for heading */
+    color: var(--heading-text-color, #FFFFFF); 
+    font-family: var(--font-family-headings, 'Press Start 2P', monospace); 
+    text-align: center;
+}
+
+#theme-selector-panel button {
+    display: block;
+    width: 100%;
+    padding: 0.5rem 0.625rem; /* 8px 10px */
+    margin-bottom: 0.5rem; /* 8px */
+    border: 1px solid var(--container-border-color, #008000);
+    background-color: transparent; 
+    color: var(--link-color, #39FF14); 
+    font-family: var(--font-family-body, 'Fira Sans', sans-serif); 
+    font-size: 0.9rem; /* Approx 14.4px for Fira Sans */
+    line-height: 1.5; /* Added for button text */
+    cursor: pointer;
+    text-align: left;
+    border-radius: 0.1875rem; /* 3px */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#theme-selector-panel button:hover {
+    background-color: var(--theme-selector-hover-bg-color, #00FF00);
+    color: var(--theme-selector-hover-text-color, #000000);
+    border-color: var(--theme-selector-hover-bg-color, #00FF00); 
+}
+
+#theme-selector-panel button:last-child {
+    margin-bottom: 0;
+}
+
+/* For centering specific text blocks like the intro on index.html */
+.intro-text-block {
+    max-width: 70ch; 
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left; 
+    margin-bottom: var(--container-padding, 1.5625rem); /* 25px */
+}
+
+/* Quick Navigation Section Styling */
+.quick-nav {
+    margin-top: var(--container-padding, 25px); /* Space above this section */
+    margin-bottom: var(--container-padding, 25px); /* Space below this section */
+    text-align: center; /* Center the "Acesso Rápido" heading */
+}
+
+.quick-nav h2 {
+    /* The global .container h2 rule should apply for font and color (Press Start 2P, white)
+       If specific adjustments are needed for this h2, they can be added here.
+       For example, slightly smaller font size if desired:
+       font-size: 1.5rem; /* Adjust if needed, default is 1.75rem for h2 in container */
+    margin-bottom: 1.5rem; /* Space between heading and the icon grid */
+}
+
+.quick-links-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem; /* Spacing between the link buttons */
+}
+
+.quick-link-button {
+    font-family: var(--font-family-headings); /* 'Press Start 2P' */
+    color: var(--link-color);                 /* Neon green (or current theme's link color) */
+    background-color: transparent;
+    border: 2px solid var(--link-color);      /* Neon green border */
+    padding: 0.75rem 1.25rem;                 /* Padding inside the button */
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: var(--container-border-radius, 5px); /* Use container's border radius */
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    display: inline-block; /* Or flex for icon+text alignment if actual icons are used later */
+    font-size: 0.8rem; /* Adjust for Press Start 2P if too large/small */
+    letter-spacing: 1px; /* Slight letter spacing for pixel font */
+}
+
+.quick-link-button:hover,
+.quick-link-button:focus {
+    background-color: var(--link-color);      /* Fill with link color on hover */
+    color: var(--primary-bg-color);           /* Text color becomes the primary background color (e.g., black) */
+    /* Or use --theme-selector-hover-text-color if that's more appropriate for contrast */
+    transform: translateY(-2px); /* Slight lift effect */
+    box-shadow: 0 4px 8px rgba(0, 255, 0, 0.3); /* Neon green glow */
+}
+
+/* Resource Internal Navigation Styles */
+.resource-internal-nav {
+    margin-top: 1.5rem; /* Space above the nav bar */
+    margin-bottom: 2rem; /* Space below the nav bar, separating from content sections */
+}
+
+.resource-internal-nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+    justify-content: center; /* Center the buttons in the available space */
+    gap: 0.75rem; /* Spacing between navigation buttons */
+}
+
+.resource-internal-nav li {
+    /* No specific styles needed for li if gap is used on ul and buttons handle their own appearance */
+}
+
+.resource-internal-nav .nav-button { /* Targets <a> tags with class .nav-button inside .resource-internal-nav */
+    display: inline-block; /* Allows padding, margin, and keeps it inline-ish */
+    font-family: var(--font-family-headings);
+    font-size: 0.75rem; /* Slightly smaller for these buttons, adjust as needed */
+    color: var(--link-color);
+    background-color: transparent;
+    border: 1px solid var(--container-border-color);
+    padding: 0.6rem 1rem; /* Padding for a button-like feel */
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: var(--container-border-radius);
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    letter-spacing: 0.5px; /* Slight spacing for pixel font */
+}
+
+.resource-internal-nav .nav-button:hover,
+.resource-internal-nav .nav-button:focus {
+    background-color: var(--link-color); /* Use link-color for background on hover */
+    color: var(--primary-bg-color); /* Text color becomes primary background (e.g., black) for contrast */
+    border-color: var(--link-color); /* Border matches the new background */
+}
+
+/* Resource Section Styling (Basic) */
+.resource-section {
+    padding-top: 1rem; /* Add some padding above the heading for when scrolled to */
+    margin-bottom: 2rem; /* Space between sections */
+}
+
+.resource-section h2 {
+    /* Assuming general .container h2 styles are mostly okay. 
+       If specific adjustments are needed for these section titles: */
+    font-size: 1.5rem; /* Slightly smaller than main page h2 if desired */
+    text-align: left; /* Align section titles to the left */
+    border-bottom: 1px solid var(--secondary-text-color);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem; /* Space below the heading, before any content within the section */
+}
+
+/* Resource Card Styles */
+.resource-card {
+    /* Inherits background, border, border-radius, box-shadow from 'article' tag */
+    padding: 1.25rem; /* Slightly less than --container-padding for internal spacing */
+    margin-bottom: 1.5rem; /* Consistent spacing between cards */
+    /* display: flex; flex-direction: column; */ /* Not strictly needed for now */
+}
+
+.resource-icon-placeholder {
+    font-size: 2.5rem; /* Prominent icon size */
+    margin-bottom: 1rem;
+    text-align: center; /* Center the icon */
+    color: var(--link-color); /* Use link color for icons */
+}
+
+.resource-card h3 {
+    font-family: var(--font-family-headings);
+    font-size: 1.3rem; /* Appropriate size for card titles */
+    color: var(--heading-text-color);
+    text-align: left; /* Override general h3 centering */
+    margin-top: 0; /* Remove any top margin from default h3 */
+    margin-bottom: 0.75rem;
+}
+
+.resource-card h3 a {
+    color: inherit; /* Inherit color from h3 */
+    text-decoration: none;
+}
+
+.resource-card h3 a:hover {
+    text-decoration: underline;
+    color: var(--link-hover-color); /* Standard link hover color */
+}
+
+.resource-card .resource-description,
+.resource-card .resource-source,
+.resource-card .resource-duration {
+    font-family: var(--font-family-body);
+    color: var(--main-text-color);
+    font-size: 0.95rem; /* Slightly smaller for de-emphasis */
+    line-height: 1.6;
+    margin-bottom: 0.6rem;
+}
+
+.resource-card .resource-source,
+.resource-card .resource-duration {
+    font-size: 0.85rem; /* Even smaller for tertiary info */
+    color: var(--secondary-text-color);
+}
+
+.resource-meta {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--secondary-text-color);
+    font-size: 0.85rem;
+    color: var(--secondary-text-color);
+    line-height: 1.5;
+}
+
+.resource-meta .resource-discipline,
+.resource-meta .resource-tags {
+    display: block; /* Each on its own line */
+    margin-bottom: 0.4rem;
+}
+
+.resource-meta .resource-tags {
+    margin-bottom: 0; /* No margin for the last element in meta */
+}
+
+/* Category Discipline Navigation Styles */
+.category-discipline-nav {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border-top: 1px solid var(--secondary-text-color);
+    border-bottom: 1px solid var(--secondary-text-color);
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.category-discipline-nav h2 {
+    text-align: left;
+    font-size: 1.4rem; /* Slightly smaller than main section H2s */
+    color: var(--heading-text-color);
+    margin-bottom: 1rem;
+    /* font-family is inherited from .container h2 -> var(--font-family-headings) */
+}
+
+.category-discipline-nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem; /* Consistent with .resource-internal-nav ul */
+}
+
+/* .category-discipline-nav li {} */ /* No specific styles needed for li if gap is used on ul */
+
+.category-discipline-nav .discipline-button {
+    /* Inherits base styles from .nav-button */
+    font-size: 0.8rem; /* Slightly smaller than main resource nav buttons */
+    padding: 0.5rem 0.9rem; /* Custom padding */
+    /* Other .nav-button styles like border, color, hover effects are inherited */
+}
+
+.category-discipline-nav p {
+    font-style: italic;
+    font-size: 0.9rem;
+    text-align: center;
+    margin-top: 1.5rem;
+    color: var(--secondary-text-color);
+}
+
+/* General icon placeholder style if used in titles or buttons */
+.icon-placeholder {
+    margin-right: 0.5em; /* Space between icon and text */
+    /* font-size: 1em; /* Ensure it scales with parent text if it's actual text */
+    /* display: inline-block; */ /* Helps with alignment if needed */
+}
