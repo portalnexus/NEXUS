@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Function to apply a theme
     function applyTheme(themeClass) {
         // Remove any existing theme classes from body
-        document.body.classList.remove('theme-digital-blue-green', 'theme-retro-terminal', 'theme-light-classic-neon-red');
+        document.body.classList.remove('theme-digital-blue-green', 'theme-retro-terminal', 'theme-light-classic-neon-red', 'theme-blue-matrix', 'theme-orange-matrix');
         // Note: 'theme-default' isn't a class we add; it's the absence of other theme classes, relying on :root.
 
         if (themeClass && themeClass !== 'theme-default') {

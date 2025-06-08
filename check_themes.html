@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <title>Theme Check</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Minimal styles to ensure elements are available for checking */
+    .container { padding: 1px; } /* Ensure it's not empty for querySelector */
+    nav { padding: 1px; } /* Ensure it's not empty for querySelector */
+  </style>
+</head>
+<body>
+<div id="page-wrapper">
+  <nav>
+    <ul>
+      <li><a href="#">Test Link</a></li>
+    </ul>
+  </nav>
+  <div class="container">
+    <h1>Test Heading</h1>
+    <p>Test paragraph.</p>
+  </div>
+</div>
+<canvas id="matrixCanvas"></canvas>
+<div id="theme-config-icon" title="Configurar Tema">⚙️</div>
+<div id="theme-selector-panel" class="hidden">
+    <h3>Escolha um Tema:</h3>
+    <button data-theme="theme-default">Green Circuit</button>
+    <button data-theme="theme-digital-blue-green">Digital Blue-Green</button>
+    <button data-theme="theme-retro-terminal">Retro Terminal</button>
+    <button data-theme="theme-light-classic-neon-red">Light Classic</button>
+    <button data-theme="theme-blue-matrix">Matrix Azul</button>
+    <button data-theme="theme-orange-matrix">Matrix Laranja</button>
+</div>
+<script src="theme-switcher.js"></script>
+<script src="check_themes.js"></script>
+</body>
+</html>
