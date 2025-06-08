@@ -1,0 +1,26 @@
+# Ignore Node.js dependency directory
+node_modules/
+
+# Ignore Python cache
+__pycache__/
+*.pyc
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore common build outputs
+build/
+dist/
+target/
+out/
+
+# Ignore log files
+*.log
+logs/
+
+# Ignore IDE/editor specific files
+.idea/
+.vscode/
+*.swp
+*~

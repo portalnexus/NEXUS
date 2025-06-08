@@ -734,6 +734,44 @@ body.theme-light-classic-neon-red {
     color: var(--secondary-text-color);
 }
 
+/* theme-blue-matrix */
+body.theme-blue-matrix {
+    --primary-bg-color: #000000;
+    --content-box-bg-color: rgba(0, 0, 0, 0.75);
+    --main-text-color: #FFFFFF;
+    --secondary-text-color: #ADD8E6;
+    --heading-text-color: #FF0000;
+    --container-border-color: #0000FF;
+    --link-color: #0000FF;
+    --link-hover-color: #ADD8E6;
+    --matrix-rain-actual-color: #0000FF;
+    --theme-selector-bg-color: #1a1a1a;
+    --theme-selector-text-color: #FFFFFF;
+    --theme-selector-hover-bg-color: #0000FF;
+    --theme-selector-hover-text-color: #FFFFFF;
+    --katex-text-color: #FFFFFF;
+    --katex-text-shadow-color: rgba(0, 0, 255, 0.5);
+}
+
+/* theme-orange-matrix */
+body.theme-orange-matrix {
+    --primary-bg-color: #000000;
+    --content-box-bg-color: rgba(0, 0, 0, 0.75);
+    --main-text-color: #FFFFFF;
+    --secondary-text-color: #FFFF00;
+    --heading-text-color: #FFA500;
+    --container-border-color: #FFA500;
+    --link-color: #FFA500;
+    --link-hover-color: #FFFF00;
+    --matrix-rain-actual-color: #FFA500;
+    --theme-selector-bg-color: #1a1a1a;
+    --theme-selector-text-color: #FFFFFF;
+    --theme-selector-hover-bg-color: #FFA500;
+    --theme-selector-hover-text-color: #000000;
+    --katex-text-color: #FFFFFF;
+    --katex-text-shadow-color: rgba(255, 165, 0, 0.5);
+}
+
 /* General icon placeholder style if used in titles or buttons */
 .icon-placeholder {
     margin-right: 0.5em; /* Space between icon and text */
