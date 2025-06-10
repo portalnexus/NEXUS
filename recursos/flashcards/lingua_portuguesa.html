@@ -3,23 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Língua Portuguesa - Flashcards</title>
-    <link rel="stylesheet" href="../../style.css">
+    <title>Língua Portuguesa - Flashcards - Nexus</title>
+    <link rel="stylesheet" href="../../../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,700;1,400&family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
+<div id="page-wrapper">
+    <nav>
+        <ul>
+            <li><a href="../../../index.html">Página Inicial</a></li>
+            <li><a href="../../../recursos.html">Recursos</a></li>
+            <li><a href="../../../desafios.html">Desafios</a></li>
+            <li><a href="../../../midias.html">Mídias</a></li>
+            <li><a href="../../../sobre.html">Sobre o Nexus</a></li>
+        </ul>
+    </nav>
+    <div class="container">
         <h1>Língua Portuguesa - Flashcards</h1>
-        <nav>
-            <a href="../../index.html">Home</a>
-            <a href="../../recursos.html">Recursos</a>
+        <nav class="sub-nav">
+            <a href="../../../index.html">Home</a>
+            <a href="../../../recursos.html">Recursos</a>
         </nav>
-    </header>
-    <main>
         <p>Conteúdo em breve.</p>
-    </main>
+    </div> <!-- /.container -->
+    <canvas id="matrixCanvas"></canvas>
+    <script src="../../../matrix-rain.js" defer></script>
     <footer>
-        <p>&copy; 2024 Plataforma de Estudos</p>
+        <div class="container">
+            <p>&copy; 2025 Nexus. Todos os direitos reservados.</p>
+            <p><a href="../../../sobre.html">Sobre o Nexus</a></p>
+        </div>
     </footer>
-    <script src="../../theme-switcher.js"></script>
+
+</div> <!-- /#page-wrapper -->
+<div id="theme-config-icon" title="Configurar Tema">⚙️</div>
+<div id="theme-selector-panel" class="hidden">
+    <h3>Escolha um Tema:</h3>
+    <button data-theme="theme-default" title="Tema Green Circuit">Green Circuit</button>
+    <button data-theme="theme-digital-blue-green" title="Tema Digital Blue-Green">Digital Blue-Green</button>
+    <button data-theme="theme-retro-terminal" title="Tema Retro Terminal">Retro Terminal</button>
+    <button data-theme="theme-light-classic-neon-red" title="Tema Light Classic Neon Red">Light Classic</button>
+    <button data-theme="theme-blue-matrix" title="Tema Endless Blue">Endless Blue</button>
+    <button data-theme="theme-orange-matrix" title="Tema Juicy Orange">Juicy Orange</button>
+</div>
+<script src="../../../theme-switcher.js" defer></script>
 </body>
 </html>
