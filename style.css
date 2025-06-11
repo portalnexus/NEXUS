@@ -778,3 +778,46 @@ body.theme-orange-matrix {
     /* font-size: 1em; /* Ensure it scales with parent text if it's actual text */
     /* display: inline-block; */ /* Helps with alignment if needed */
 }
+
+/* General Themed Button Style */
+.themed-button {
+    font-family: var(--font-family-body); /* Or --font-family-headings if preferred for buttons */
+    font-size: 0.9rem;
+    color: var(--link-color);
+    background-color: transparent;
+    border: 1px solid var(--link-color); /* Use link-color for border for better visibility */
+    padding: 0.6rem 1.2rem; /* Adjusted padding */
+    text-transform: uppercase;
+    border-radius: var(--container-border-radius);
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    text-decoration: none; /* Ensure no underline if used on <a> tags styled as buttons */
+    display: inline-block; /* For proper padding and margin */
+    margin: 0.25rem; /* Add some margin */
+}
+
+.themed-button:hover,
+.themed-button:focus {
+    background-color: var(--link-color);
+    color: var(--primary-bg-color); /* Text color for hover state, usually dark */
+    border-color: var(--link-color); /* Keep border color same as background on hover */
+}
+
+/* Specific adjustments for buttons inside the PDF Modal */
+#pdfModal .themed-button {
+    /* Default theme is dark. Modal is light. Need to ensure contrast. */
+    /* Using theme variables directly might be fine if the theme is light. */
+    /* For a dark theme's buttons on a light modal, we might need overrides or different variables. */
+    /* Let's assume the variables adapt or this is handled by a light theme definition. */
+    /* If not, explicit colors would be needed here for light modal context. */
+    /* For now, we rely on the theme variables. */
+    margin: 5px; /* Spacing for modal buttons */
+}
+
+#pdfModal #closeModal.themed-button {
+    /* Style for the close button specifically */
+    padding: 0.3rem 0.6rem; /* Smaller padding for a typical close button */
+    font-size: 1.2rem; /* Make the 'x' a bit larger */
+    line-height: 1; /* Ensure text is centered vertically */
+    float: right; /* Position it to the right */
+}
