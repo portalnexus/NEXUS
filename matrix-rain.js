@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
         '∇²', '∠', '⊥', '∥', '∧', '∨', '¬', '⇔', '⇒', '∂/∂x', 
         'log(x)', 'ln(x)', 'cos(x)', 'sen(x)', 'tg(x)', '∑', '∏', '∅',
         'ℂⁿ', 'y', 'f(x)', 'Δx', 'δx', 'δy', 'A⁻¹', 'Aᵀ', 
-        'I', 'e', 'Φ', 'ζ(s)', 'Γ(z)'
+        'I', 'e', 'Φ', 'ζ(s)', 'Γ(z)', '1729'
 
         /* Lista antiga de símbolos sem erro de undefined, estou tentando corrigir agora:
         '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
