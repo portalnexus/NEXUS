@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXUS - Desafios de Trigonometria (Fácil)</title>
+    <meta name="description" content="Aprimore suas habilidades em trigonometria com desafios de nível fácil, focados nos conceitos fundamentais.">
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+    <link rel="icon" href="../../assets/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="../../index.html"><img src="../../assets/logo.png" alt="Logo NEXUS"></a>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="../../index.html">Início</a></li>
+                    <li><a href="../../desafios.html">Desafios</a></li>
+                    <li><a href="../../recursos.html">Recursos</a></li>
+                    <li><a href="../../sobre.html">Sobre</a></li>
+                </ul>
+            </nav>
+            <div class="theme-switcher">
+                <input type="checkbox" id="theme-toggle" class="theme-toggle-checkbox">
+                <label for="theme-toggle" class="theme-toggle-label"></label>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <header class="page-header">
+            <h1>Desafios de Trigonometria - Nível Fácil</h1>
+            <p>Teste seus conhecimentos básicos em trigonometria. Estes desafios cobrem os conceitos essenciais do ciclo trigonométrico, conversão de ângulos e as relações em triângulos retângulos.</p>
+        </header>
+
+        <div class="problem-card">
+            <h3>Desafio 1: Conversão de Graus para Radianos</h3>
+            <p class="problem-statement">Converta o ângulo de 150° (graus) para radianos. Apresente a resposta na forma de uma fração simplificada de $\pi$.</p>
+            
+            <details class="solution-details">
+                <summary>Ver Resolução Comentada</summary>
+                <div class="solution-content">
+                    <h4>Metodologia de Resolução:</h4>
+                    <ol>
+                        <li><strong>Passo 1: Interpretação do Enunciado.</strong> O problema solicita a conversão de uma medida de ângulo da unidade de graus para a unidade de radianos.</li>
+                        <li><strong>Passo 2: Plano de Ação.</strong> A estratégia é utilizar a relação de proporção fundamental entre graus e radianos, que é $180^\circ = \pi \text{ rad}$. A fórmula de conversão direta é: $\text{radianos} = \text{graus} \times \frac{\pi}{180}$.</li>
+                        <li><strong>Passo 3: Execução.</strong> Aplicamos a fórmula para o ângulo de 150°:
+                        $$ \text{valor em rad} = 150 \times \frac{\pi}{180} $$
+                        Simplificamos a fração dividindo o numerador e o denominador pelo máximo divisor comum, que é 30:
+                        $$ \frac{150}{180} = \frac{15 \div 3}{18 \div 3} = \frac{5}{6} $$
+                        Portanto, o resultado é $\frac{5\pi}{6}$ rad.
+                        </li>
+                        <li><strong>Passo 4: Resposta Final.</strong> O ângulo de 150° equivale a $\frac{5\pi}{6}$ radianos.</li>
+                    </ol>
+                    
+                    <h4>Código da Solução:</h4>
+                    <pre><code class="language-python">
+import math
+
+def graus_para_radianos(graus):
+    """Converte um ângulo de graus para radianos e exibe como fração de pi."""
+    # Fator de conversão
+    radianos = graus * (math.pi / 180)
+    
+    # Simplificando a fração de pi
+    # Encontrar o MDC para simplificar a fração
+    mdc = math.gcd(int(graus), 180)
+    numerador_fracao = int(graus / mdc)
+    denominador_fracao = int(180 / mdc)
+    
+    return f"{graus}° é igual a {radianos:.4f} radianos, ou {numerador_fracao}π/{denominador_fracao} rad."
+
+# Execução para o desafio
+angulo_graus = 150
+print(graus_para_radianos(angulo_graus))
+# Resposta esperada: "150° é igual a 2.6180 radianos, ou 5π/6 rad."
+                    </code></pre>
+                </div>
+            </details>
+        </div>
+
+        <div class="problem-card">
+            <h3>Desafio 2: Relação Fundamental da Trigonometria</h3>
+            <p class="problem-statement">Sabendo que um ângulo $\alpha$ pertence ao primeiro quadrante ($0^\circ < \alpha < 90^\circ$) e que $\sin(\alpha) = \frac{3}{5}$, calcule o valor de $\cos(\alpha)$.</p>
+            
+            <details class="solution-details">
+                <summary>Ver Resolução Comentada</summary>
+                <div class="solution-content">
+                    <h4>Metodologia de Resolução:</h4>
+                    <ol>
+                        <li><strong>Passo 1: Interpretação do Enunciado.</strong> O problema nos dá o valor do seno de um ângulo no primeiro quadrante e pede o valor do cosseno desse mesmo ângulo.</li>
+                        <li><strong>Passo 2: Plano de Ação.</strong> Utilizaremos a Relação Fundamental da Trigonometria, que afirma que para qualquer ângulo $\alpha$, vale a identidade: $\sin^2(\alpha) + \cos^2(\alpha) = 1$.</li>
+                        <li><strong>Passo 3: Execução.</strong> Substituímos o valor de $\sin(\alpha)$ na fórmula:
+                        $$ \left(\frac{3}{5}\right)^2 + \cos^2(\alpha) = 1 $$
+                        $$ \frac{9}{25} + \cos^2(\alpha) = 1 $$
+                        Isolamos o $\cos^2(\alpha)$:
+                        $$ \cos^2(\alpha) = 1 - \frac{9}{25} = \frac{25 - 9}{25} = \frac{16}{25} $$
+                        Extraímos a raiz quadrada:
+                        $$ \cos(\alpha) = \pm\sqrt{\frac{16}{25}} = \pm\frac{4}{5} $$
+                        Como o enunciado informa que $\alpha$ está no primeiro quadrante, o valor do cosseno é positivo.
+                        </li>
+                        <li><strong>Passo 4: Resposta Final.</strong> O valor de $\cos(\alpha)$ é $\frac{4}{5}$.</li>
+                    </ol>
+                    
+                    <h4>Código da Solução:</h4>
+                    <pre><code class="language-python">
+import math
+
+def calcular_cosseno(seno, quadrante):
+    """Calcula o cosseno a partir do seno, usando a relação fundamental."""
+    if not (0 < seno < 1):
+        return "Seno inválido para o primeiro quadrante."
+
+    cos_ao_quadrado = 1 - seno**2
+    cosseno = math.sqrt(cos_ao_quadrado)
+    
+    # No primeiro quadrante, o cosseno é positivo
+    if quadrante == 1:
+        return f"O cosseno é {cosseno:.1f}"
+    else:
+        # Para outros quadrantes, o sinal poderia mudar
+        return f"O cosseno é {cosseno:.1f} (considerando apenas o valor absoluto)"
+
+# Dados do problema
+seno_alpha = 3/5
+quadrante_alpha = 1
+
+print(calcular_cosseno(seno_alpha, quadrante_alpha))
+# Resposta esperada: "O cosseno é 0.8"
+                    </code></pre>
+                </div>
+            </details>
+        </div>
+
+        <div class="problem-card">
+            <h3>Desafio 3: Triângulo Retângulo e SOHCAHTOA</h3>
+            <p class="problem-statement">Uma escada de 10 metros de comprimento está apoiada em uma parede vertical. O pé da escada forma um ângulo de 60° com o solo (plano e horizontal). A que altura a escada toca a parede? (Considere $\sin(60^\circ) = \frac{\sqrt{3}}{2}$, $\cos(60^\circ) = \frac{1}{2}$ e $\tan(60^\circ) = \sqrt{3}$).</p>
+            
+            <details class="solution-details">
+                <summary>Ver Resolução Comentada</summary>
+                <div class="solution-content">
+                    <h4>Metodologia de Resolução:</h4>
+                    <ol>
+                        <li><strong>Passo 1: Interpretação do Enunciado.</strong> O problema descreve um cenário que pode ser modelado por um triângulo retângulo. A escada é a hipotenusa, a altura na parede é o cateto oposto ao ângulo dado, e a distância no solo é o cateto adjacente. Queremos encontrar a altura (cateto oposto).</li>
+                        <li><strong>Passo 2: Plano de Ação.</strong> Usaremos a relação trigonométrica do seno, definida como $\sin(\theta) = \frac{\text{Cateto Oposto}}{\text{Hipotenusa}}$.</li>
+                        <li><strong>Passo 3: Execução.</strong> Temos os seguintes dados:
+                        <ul>
+                            <li>Hipotenusa = 10 m</li>
+                            <li>Ângulo $\theta$ = 60°</li>
+                            <li>Cateto Oposto (altura $h$) = ?</li>
+                        </ul>
+                        Aplicando a fórmula:
+                        $$ \sin(60^\circ) = \frac{h}{10} $$
+                        Usando o valor fornecido para $\sin(60^\circ)$:
+                        $$ \frac{\sqrt{3}}{2} = \frac{h}{10} $$
+                        Multiplicamos em cruz para isolar $h$:
+                        $$ 2h = 10\sqrt{3} \implies h = 5\sqrt{3} $$
+                        </li>
+                        <li><strong>Passo 4: Resposta Final.</strong> A escada toca a parede a uma altura de $5\sqrt{3}$ metros.</li>
+                    </ol>
+                    
+                    <h4>Código da Solução:</h4>
+                    <pre><code class="language-python">
+import math
+
+def calcular_altura_escada(comprimento_escada, angulo_graus):
+    """Calcula a altura que a escada alcança na parede."""
+    # Converter o ângulo para radianos para usar nas funções do módulo math
+    angulo_radianos = math.radians(angulo_graus)
+    
+    # Usar a função seno: sin(theta) = oposto / hipotenusa
+    # oposto = hipotenusa * sin(theta)
+    altura = comprimento_escada * math.sin(angulo_radianos)
+    
+    # O valor de sqrt(3) é aproximadamente 1.732
+    valor_numerico = 5 * math.sqrt(3)
+
+    return f"A altura é {altura:.2f} metros, que corresponde a 5√3 (valor numérico: {valor_numerico:.2f} m)."
+
+# Dados do problema
+comprimento = 10
+angulo = 60
+
+print(calcular_altura_escada(comprimento, angulo))
+# Resposta esperada: "A altura é 8.66 metros, que corresponde a 5√3 (valor numérico: 8.66 m)."
+                    </code></pre>
+                </div>
+            </details>
+        </div>
+
+        <div class="problem-card">
+            <h3>Desafio 4: Valor de Expressão Trigonométrica</h3>
+            <p class="problem-statement">Calcule o valor da seguinte expressão: $E = \cos(0) + \sin(\frac{\pi}{2}) - \tan(\pi)$.</p>
+            
+            <details class="solution-details">
+                <summary>Ver Resolução Comentada</summary>
+                <div class="solution-content">
+                    <h4>Metodologia de Resolução:</h4>
+                    <ol>
+                        <li><strong>Passo 1: Interpretação do Enunciado.</strong> O problema pede para calcular o valor numérico de uma expressão envolvendo seno, cosseno e tangente de ângulos notáveis do ciclo trigonométrico.</li>
+                        <li><strong>Passo 2: Plano de Ação.</strong> Vamos encontrar o valor de cada termo da expressão separadamente, consultando os valores do ciclo trigonométrico para os ângulos 0, $\pi/2$ (90°) e $\pi$ (180°).</li>
+                        <li><strong>Passo 3: Execução.</strong>
+                        <ul>
+                            <li>$\cos(0)$: No ciclo trigonométrico, o ângulo 0 corresponde ao ponto (1, 0). O cosseno é a coordenada x, então $\cos(0) = 1$.</li>
+                            <li>$\sin(\frac{\pi}{2})$: O ângulo $\pi/2$ corresponde ao ponto (0, 1). O seno é a coordenada y, então $\sin(\frac{\pi}{2}) = 1$.</li>
+                            <li>$\tan(\pi)$: A tangente é $\frac{\sin(\pi)}{\cos(\pi)}$. O ângulo $\pi$ corresponde ao ponto (-1, 0). Assim, $\sin(\pi) = 0$ e $\cos(\pi) = -1$. Portanto, $\tan(\pi) = \frac{0}{-1} = 0$.</li>
+                        </ul>
+                        Substituindo os valores na expressão:
+                        $$ E = 1 + 1 - 0 = 2 $$
+                        </li>
+                        <li><strong>Passo 4: Resposta Final.</strong> O valor da expressão $E$ é 2.</li>
+                    </ol>
+                    
+                    <h4>Código da Solução:</h4>
+                    <pre><code class="language-python">
+import math
+
+# Os ângulos em radianos
+angulo_1 = 0
+angulo_2 = math.pi / 2
+angulo_3 = math.pi
+
+# Calculando cada termo
+cos_0 = math.cos(angulo_1)
+sin_pi_2 = math.sin(angulo_2)
+tan_pi = math.tan(angulo_3)
+
+# Calculando a expressão final
+# Devido a imprecisões de ponto flutuante, os resultados podem ser muito próximos de zero.
+# Por exemplo, tan(pi) pode ser -1.22e-16. Usamos round() para corrigir.
+E = round(cos_0) + round(sin_pi_2) - round(tan_pi)
+
+print(f"cos(0) = {round(cos_0)}")
+print(f"sin(π/2) = {round(sin_pi_2)}")
+print(f"tan(π) = {round(tan_pi)}")
+print(f"O valor da expressão E é: {E}")
+
+# Resposta esperada: "O valor da expressão E é: 2"
+                    </code></pre>
+                </div>
+            </details>
+        </div>
+
+        <div class="problem-card">
+            <h3>Desafio 5: Comprimento de um Arco</h3>
+            <p class="problem-statement">Calcule o comprimento de um arco de circunferência definido por um ângulo central de 1,5 radianos em um círculo com raio de 8 cm.</p>
+            
+            <details class="solution-details">
+                <summary>Ver Resolução Comentada</summary>
+                <div class="solution-content">
+                    <h4>Metodologia de Resolução:</h4>
+                    <ol>
+                        <li><strong>Passo 1: Interpretação do Enunciado.</strong> O problema pede para encontrar o comprimento de um arco, fornecendo o raio da circunferência e o ângulo central correspondente em radianos.</li>
+                        <li><strong>Passo 2: Plano de Ação.</strong> A fórmula para o comprimento do arco ($s$) é $s = r \cdot \theta$, onde $r$ é o raio e $\theta$ é o ângulo central em radianos.</li>
+                        <li><strong>Passo 3: Execução.</strong> Os dados fornecidos são:
+                        <ul>
+                            <li>Raio $r = 8$ cm</li>
+                            <li>Ângulo $\theta = 1,5$ rad</li>
+                        </ul>
+                        Aplicando a fórmula:
+                        $$ s = 8 \text{ cm} \times 1,5 \text{ rad} $$
+                        $$ s = 12 \text{ cm} $$
+                        </li>
+                        <li><strong>Passo 4: Resposta Final.</strong> O comprimento do arco é 12 cm.</li>
+                    </ol>
+                    
+                    <h4>Código da Solução:</h4>
+                    <pre><code class="language-python">
+def calcular_comprimento_arco(raio, angulo_radianos):
+    """Calcula o comprimento de um arco de circunferência."""
+    if raio <= 0 or angulo_radianos < 0:
+        return "Raio e ângulo devem ser positivos."
+    
+    comprimento = raio * angulo_radianos
+    return f"O comprimento do arco é {comprimento} cm."
+
+# Dados do problema
+raio_circulo = 8
+angulo_central = 1.5
+
+print(calcular_comprimento_arco(raio_circulo, angulo_central))
+# Resposta esperada: "O comprimento do arco é 12.0 cm."
+                    </code></pre>
+                </div>
+            </details>
+        </div>
+
+        <div class="problem-card">
+            <h3>Desafio 6: Redução ao Primeiro Quadrante</h3>
+            <p class="problem-statement">Encontre o valor de $\sin(210^\circ)$ utilizando a técnica de redução ao primeiro quadrante.</p>
+            
+            <details class="solution-details">
+                <summary>Ver Resolução Comentada</summary>
+                <div class="solution-content">
+                    <h4>Metodologia de Resolução:</h4>
+                    <ol>
+                        <li><strong>Passo 1: Interpretação do Enunciado.</strong> O objetivo é calcular o seno de um ângulo (210°) que não está no primeiro quadrante, relacionando-o com um ângulo do primeiro quadrante.</li>
+                        <li><strong>Passo 2: Plano de Ação.</strong> Primeiro, identificamos em qual quadrante o ângulo de 210° se encontra. Depois, aplicamos a regra de redução correspondente para encontrar o ângulo de referência no primeiro quadrante. Finalmente, ajustamos o sinal do seno de acordo com o quadrante original.
+                        <ul>
+                            <li>Quadrantes: I (0-90°), II (90-180°), III (180-270°), IV (270-360°).</li>
+                            <li>Sinal do Seno: Positivo nos quadrantes I e II; Negativo nos quadrantes III e IV.</li>
+                            <li>Regra de redução para o Q3: $\theta_{ref} = \theta - 180^\circ$.</li>
+                        </ul>
+                        </li>
+                        <li><strong>Passo 3: Execução.</strong>
+                        <p>O ângulo de 210° está no terceiro quadrante (pois $180^\circ < 210^\circ < 270^\circ$).</p>
+                        <p>Calculamos o ângulo de referência: $\alpha_{ref} = 210^\circ - 180^\circ = 30^\circ$.</p>
+                        <p>Isso significa que o valor absoluto de $\sin(210^\circ)$ é igual a $\sin(30^\circ)$. Sabemos que $\sin(30^\circ) = \frac{1}{2}$.</p>
+                        <p>No terceiro quadrante, a função seno é negativa. Portanto, ajustamos o sinal.</p>
+                        $$ \sin(210^\circ) = -\sin(30^\circ) = -\frac{1}{2} $$
+                        </li>
+                        <li><strong>Passo 4: Resposta Final.</strong> O valor de $\sin(210^\circ)$ é $-\frac{1}{2}$.</li>
+                    </ol>
+                    
+                    <h4>Código da Solução:</h4>
+                    <pre><code class="language-python">
+import math
+
+def seno_reducao_primeiro_quadrante(angulo_graus):
+    """Calcula o seno de um ângulo usando redução ao primeiro quadrante."""
+    
+    # Converte para radianos para cálculo
+    rad = math.radians(angulo_graus)
+    valor_real = math.sin(rad)
+    
+    # Lógica da redução
+    if 180 < angulo_graus < 270:
+        quadrante = "Terceiro"
+        angulo_referencia = angulo_graus - 180
+        sinal = "-"
+        valor_seno_ref = math.sin(math.radians(angulo_referencia))
+        resultado = f"sin({angulo_graus}°) está no {quadrante} quadrante (sinal negativo).\n"
+        resultado += f"Ângulo de referência: {angulo_graus} - 180 = {angulo_referencia}°.\n"
+        resultado += f"sin({angulo_graus}°) = -sin({angulo_referencia}°) = -{valor_seno_ref:.1f}.\n"
+        resultado += f"Valor calculado: {valor_real:.1f}"
+        return resultado
+    else:
+        return f"Cálculo direto: sin({angulo_graus}°) = {valor_real}"
+
+# Execução para o desafio
+angulo = 210
+print(seno_reducao_primeiro_quadrante(angulo))
+# Resposta esperada: "sin(210°) = -sin(30°) = -0.5."
+                    </code></pre>
+                </div>
+            </details>
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 NEXUS. Todos os direitos reservados. Feito para acelerar o aprendizado em Exatas e Tecnologia.</p>
+        </div>
+    </footer>
+
+    <script src="../../theme-switcher.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>
