@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus - Desafios sobre Função Afim (1º Grau)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,700;1,400&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="page-wrapper">
+    <nav>
+        <ul>
+            <li><a href="index.html">Página Inicial</a></li>
+            <li><a href="recursos.html">Recursos</a></li>
+            <li><a href="desafios.html">Desafios</a></li>
+            <li><a href="midias.html">Mídias</a></li>
+            <li><a href="sobre.html">Sobre o Nexus</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <header>
+            <h1>Lista de Problemas sobre Função Afim (1º Grau)</h1>
+        </header>
+
+        <article class="page-article">
+            <h2>APRESENTAÇÃO AO ESTUDANTE</h2>
+            <p>Olá, futuro(a) craque da matemática!</p>
+            <p>Que bom ter você aqui para desvendar os segredos da Função Afim, que muitos conhecem como função de 1º grau. Pode parecer complicado, mas as funções afins estão por toda parte no nosso dia a dia! Elas nos ajudam a entender coisas que crescem ou diminuem de forma constante, como o preço de uma corrida de táxi ou a quantidade de água em uma caixa.</p>
+            <p>Esta lista foi feita com muito carinho para você. Começaremos com o básico, depois faremos exercícios para fixar bem o que aprendeu, e terminaremos com alguns desafios para você pensar "fora da caixa". O objetivo é que você se sinta mais confiante e se torne um mestre em resolver problemas com funções. Cada questão é um passo para você se tornar ainda melhor!</p>
+            <p>No final de cada parte, você vai encontrar as soluções detalhadas. Use-as como um guia para entender o raciocínio e ver como se chega à resposta. Não tenha medo de errar, o importante é aprender com cada tentativa.</p>
+            <p>Vamos juntos nessa jornada linear!</p>
+            <p><em>Com carinho,</em></p>
+            <p><em>Aldebaran</em></p>
+        </article>
+
+        <section id="primeiros-passos">
+            <h2>Seção 1: Primeiros Passos</h2>
+            <p>Aqui você vai aprender o que é uma função afim, como ela é escrita, e como identificar seus pedacinhos importantes.</p>
+            
+            <article><h3>1. Como escrevemos a forma geral de uma função afim?</h3></article>
+            <article><h3>2. Na função afim \( f(x) = ax + b \), o que o número \( a \) nos mostra?</h3></article>
+            <article><h3>3. Na função \( f(x) = 3x - 5 \), qual é o número que indica a inclinação da reta (coeficiente angular) e qual é o número que mostra onde a reta cruza o eixo y (coeficiente linear)?</h3></article>
+            <article><h3>4. Se \( f(x) = -2x + 7 \), qual é o valor de \( f(1) \)?</h3></article>
+            <article><h3>5. Calcule \( f(0) \) para a função \( f(x) = 5x + 2 \).</h3></article>
+            <article><h3>6. Se temos a função afim \( f(x) = x + 4 \), qual o valor de \( x \) para que \( f(x) \) seja igual a \( 9 \)?</h3></article>
+            <article><h3>7. Qual é a inclinação da linha (reta) mostrada pela função \( y = -x + 3 \)?</h3></article>
+            <article><h3>8. Em que ponto o gráfico da função \( f(x) = 2x - 6 \) cruza o eixo y?</h3></article>
+            <article><h3>9. Em que ponto o gráfico da função \( f(x) = 4x - 8 \) cruza o eixo x?</h3></article>
+            <article><h3>10. Desenhe um rascunho do gráfico da função \( f(x) = x + 2 \).</h3></article>
+            <article><h3>11. Desenhe um rascunho do gráfico da função \( f(x) = -x - 1 \).</h3></article>
+            <article><h3>12. Se uma função afim tem inclinação 3 e passa pelo ponto \( (0, 5) \), como escrevemos a sua expressão (fórmula)?</h3></article>
+        </section>
+
+        <section id="fixando-aprendizado">
+            <h2>Seção 2: Fixando o Aprendizado</h2>
+            <p>Nesta parte, vamos aplicar o que aprendemos, descobrindo a fórmula da função afim a partir de dois pontos, resolvendo contas e desigualdades, e entendendo mais sobre os gráficos.</p>
+            
+            <article><h3>1. Descubra a fórmula da função afim que passa pelos pontos \( (1, 4) \) e \( (3, 10) \).</h3></article>
+            <article><h3>2. Encontre a função afim cujo gráfico cruza o eixo y no ponto \( -2 \) e tem inclinação (coeficiente angular) de \( 1/2 \).</h3></article>
+            <article><h3>3. Resolva a equação: \( 3(x - 1) + 2(x + 1) = 11 \).</h3></article>
+            <article><h3>4. Qual é o conjunto de valores de \( x \) que tornam a desigualdade \( 4x - 5 > 2x + 3 \) verdadeira?</h3></article>
+            <article><h3>5. Encontre o conjunto de valores de \( x \) que tornam a desigualdade \( -x + 7 \le 3 \) verdadeira.</h3></article>
+            <article><h3>6. Qual função afim tem um gráfico que é uma reta paralela à reta \( y = 2x + 5 \) e passa pelo ponto \( (1, 6) \)?</h3></article>
+            <article><h3>7. Qual função afim tem um gráfico que é uma reta perpendicular (que forma 90 graus) à reta \( y = -1/3 x + 2 \) e passa pelo ponto \( (3, 1) \)?</h3></article>
+            <article><h3>8. Uma função afim \( f(x) = ax + b \) é tal que \( f(2) = 7 \) e \( f(5) = 16 \). Quais são os valores de \( a \) e \( b \)?</h3></article>
+            <article><h3>9. Se uma função afim \( f(x) \) tem inclinação negativa e cruza o eixo y em \( -3 \), o que precisa acontecer com \( x \) para que \( f(x) \) seja maior que \( 0 \)?</h3></article>
+            <article><h3>10. Um vendedor ganha um salário fixo de R$ 800,00 por mês, mais 5% de comissão sobre o valor que ele vende. Escreva a função afim que calcula o salário total do vendedor, onde \( v \) é o valor das vendas.</h3></article>
+            <article><h3>11. Se \( f(x) = 2x + 1 \), calcule o resultado de \( f(x+2) - f(x) \).</h3></article>
+            <article><h3>12. Um tanque de água tem 100 litros. Uma torneira enche o tanque colocando 5 litros de água a cada minuto. Escreva a função afim que mostra o volume de água no tanque em relação ao tempo \( t \) (em minutos).</h3></article>
+            <article><h3>13. Para qual valor de \( k \) as retas \( y = 2kx + 1 \) e \( y = (k-1)x - 3 \) são paralelas (nunca se encontram)?</h3></article>
+            <article><h3>14. Para qual valor de \( k \) as retas \( y = 3x + k \) e \( y = -1/3 x + 2 \) são perpendiculares (se cruzam formando 90 graus)?</h3></article>
+        </section>
+
+        <section id="desafios-conexoes">
+            <h2>Seção 3: Desafios e Conexões</h2>
+            <p>Estes problemas misturam funções afins com outras ideias da matemática e vão exigir um pouco mais de você.</p>
+            
+            <article><h3>1. Resolva a desigualdade \( |2x - 1| < 5 \).</h3></article>
+            <article><h3>2. Encontre o conjunto de valores de \( x \) que tornam a desigualdade \( |x + 3| \ge 2 \) verdadeira.</h3></article>
+            <article><h3>3. Um táxi cobra uma taxa inicial de R$ 4,00 e mais R$ 1,50 por cada quilômetro rodado. a) Escreva a função afim que representa o custo total da corrida, onde \( d \) é a distância em km. b) Qual seria o valor de uma corrida de 12 km? c) Se uma corrida custou R$ 25,00, quantos quilômetros foram percorridos?</h3></article>
+            <article><h3>4. Temos duas funções afins: \( f(x) = 2x - 1 \) e \( g(x) = -x + 5 \). Encontre o ponto onde os gráficos dessas duas funções se encontram.</h3></article>
+            <article><h3>5. A temperatura \( T \) em graus Celsius e a temperatura \( F \) em Fahrenheit são relacionadas pela função \( F(T) = \frac{9}{5}T + 32 \). a) Qual a temperatura em Fahrenheit quando está \( 20^\circ C \)? b) Qual a temperatura em Celsius quando está \( 68^\circ F \)? c) Existe alguma temperatura em que o valor em Celsius é igual ao valor em Fahrenheit? Se sim, qual é?</h3></article>
+            <article><h3>6. Considere a função afim \( f(x) = mx+n \). Se \( f(f(x)) = 4x + 3 \), quais são os possíveis valores para \( m \) e \( n \)?</h3></article>
+        </section>
+<!-- 
+        <section class="solutions-section">
+            <header>
+                <h2>SEÇÃO 4: SOLUÇÕES E COMO RESOLVER</h2>
+                <p>Prezado(a) estudante, esta seção traz as soluções detalhadas, passo a passo, para cada problema. Use-a para conferir suas respostas e entender melhor o caminho para resolver cada questão.</p>
+            </header>
+
+            <details>
+                <summary><strong>PROBLEMA 1:</strong> Qual é a forma geral de uma função afim?</summary>
+                <p><strong>Conceito:</strong> É a maneira padrão de escrever uma função afim.</p>
+                <p><strong>Passo a Passo:</strong> A forma mais comum de escrever uma função afim é \( f(x) = ax + b \), onde \( a \) e \( b \) são números reais (podem ser qualquer número, inclusive frações, decimais, positivos ou negativos).</p>
+                <p><strong>Solução:</strong> \( f(x) = ax + b \).</p>
+            </details>
+
+            <details>
+                <summary><strong>PROBLEMA 2:</strong> Em uma função afim \( f(x) = ax + b \), o que o número \( a \) nos mostra?</summary>
+                <p><strong>Conceito:</strong> Entendendo o que cada parte da função afim significa.</p>
+                <p><strong>Passo a Passo:</strong> O número \( a \) na função \( f(x) = ax + b \) é chamado de coeficiente angular ou taxa de variação. Ele nos diz o quão inclinada a linha (reta) será no gráfico e se ela está subindo ou descendo. Se \( a \) é positivo, a reta sobe; se \( a \) é negativo, a reta desce.</p>
+                <p><strong>Solução:</strong> O coeficiente \( a \) representa a inclinação da reta (o quanto ela sobe ou desce).</p>
+            </details>
+
+            <details>
+                <summary><strong>PROBLEMA 3:</strong> Na função afim \( f(x) = 3x - 5 \), qual é o coeficiente angular e o coeficiente linear?</summary>
+                <p><strong>Conceito:</strong> Identificar os números \( a \) e \( b \) na função.</p>
+                <p><strong>Passo a Passo:</strong> Vamos comparar a função \( f(x) = 3x - 5 \) com a forma geral \( f(x) = ax + b \): O número que acompanha o \( x \) é o coeficiente angular (\( a \)). Neste caso, \( a = 3 \). O número que está sozinho (sem o \( x \)) é o coeficiente linear (\( b \)). Neste caso, \( b = -5 \).</p>
+                <p><strong>Solução:</strong> Coeficiente angular \( a = 3 \); Coeficiente linear \( b = -5 \).</p>
+            </details>
+
+            <details>
+                <summary><strong>PROBLEMA 4:</strong> Se \( f(x) = -2x + 7 \), qual é o valor de \( f(1) \)?</summary>
+                <p><strong>Conceito:</strong> Calcular o valor da função para um \( x \) dado.</p>
+                <p><strong>Passo a Passo:</strong> Para encontrar \( f(1) \), basta trocar o \( x \) por \( 1 \) na fórmula da função: \( f(1) = -2(1) + 7 \), \( f(1) = -2 + 7 \), \( f(1) = 5 \).</p>
+                <p><strong>Solução:</strong> \( f(1) = 5 \).</p>
+            </details>
+
+            <details>
+                <summary><strong>PROBLEMA 5:</strong> Calcule \( f(0) \) para a função \( f(x) = 5x + 2 \).</summary>
+                <p><strong>Conceito:</strong> Calcular o valor da função quando \( x \) é zero, que nos dá onde a reta cruza o eixo y.</p>
+                <p><strong>Passo a Passo:</strong> Troque o \( x \) por \( 0 \) na fórmula da função: \( f(0) = 5(0) + 2 \), \( f(0) = 0 + 2 \), \( f(0) = 2 \).</p>
+                <p><strong>Solução:</strong> \( f(0) = 2 \).</p>
+            </details>
+
+            <details>
+                <summary><strong>PROBLEMA 6:</strong> Dada a função afim \( f(x) = x + 4 \), encontre o valor de \( x \) para o qual \( f(x) = 9 \).</summary>
+                <p><strong>Conceito:</strong> Resolver uma equação para encontrar o \( x \) que dá um certo resultado.</p>
+                <p><strong>Passo a Passo:</strong> Queremos que \( f(x) \) seja igual a 9, então escrevemos: \( x + 4 = 9 \). Para encontrar \( x \), subtraímos 4 dos dois lados: \( x = 9 - 4 \), \( x = 5 \).</p>
+                <p><strong>Solução:</strong> \( x = 5 \).</p>
+            </details>
+
+            <details>
+                <summary><strong>PROBLEMA 7:</strong> Qual é a inclinação da reta representada pela função afim \( y = -x + 3 \)?</summary>
+                <p><strong>Conceito:</strong> Identificar a inclinação (coeficiente angular).</p>
+                <p><strong>Passo a Passo:</strong> Numa função afim do tipo \( y = ax + b \), o número \( a \) é a inclinação. Na função \( y = -x + 3 \), o número que acompanha o \( x \) é \( -1 \) (pois \( -x \) é o mesmo que \( -1x \)).</p>
+                <p><strong>Solução:</strong> A inclinação é \( -1 \).</p>
+            </details>
+
+            <details>
+                <summary><strong>PROBLEMA 8:</strong> Onde o gráfico da função \( f(x) = 2x - 6 \) intercepta o eixo y?</summary>
+                <p><strong>Conceito:</strong> O ponto onde a reta cruza o eixo y é quando \( x = 0 \).</p>
+                <p><strong>Passo a Passo:</strong> Basta trocar \( x \) por \( 0 \) na função: \( f(0) = 2(0) - 6 = -6 \). Isso significa que a reta cruza o eixo y no ponto onde \( x \) é 0 e \( y \) é -6.</p>
+                <p><strong>Solução:</strong> O gráfico cruza o eixo y no ponto \( (0, -6) \).</p>
+            </details>
+
+            <details>
+                <summary><strong>PROBLEMA 9:</strong> Onde o gráfico da função \( f(x) = 4x - 8 \) intercepta o eixo x?</summary>
+                <p><strong>Conceito:</strong> O ponto onde a reta cruza o eixo x é quando \( f(x) = 0 \).</p>
+                <p><strong>Passo a Passo:</strong> Fazemos \( f(x) = 0 \): \( 4x - 8 = 0 \). Somamos 8 dos dois lados: \( 4x = 8 \). Dividimos por 4: \( x = 2 \). Isso significa que a reta cruza o eixo x no ponto onde \( x \) é 2 e \( y \) é 0.</p>
+                <p><strong>Solução:</strong> O gráfico cruza o eixo x no ponto \( (2, 0) \).</p>
+            </details>
+
+            <details>
+                <summary><strong>PROBLEMA 10:</strong> Esboce o gráfico da função \( f(x) = x + 2 \).</summary>
+                <p><strong>Conceito:</strong> Desenhar o gráfico de uma linha reta.</p>
+                <p><strong>Passo a Passo:</strong> O coeficiente linear é \( 2 \), então a reta cruza o eixo y no ponto \( (0, 2) \). A inclinação é \( 1 \). Se \( x=1 \), \( f(1) = 1+2 = 3 \). Então, a reta também passa pelo ponto \( (1, 3) \). Marque os pontos e desenhe uma linha reta que passe por eles.</p>
+                <p><strong>Solução:</strong> Um desenho de uma reta que sobe, passando pelos pontos \( (0, 2) \) e \( (1, 3) \).</p>
+            </details>
+
+            <details>
+                <summary><strong>PROBLEMA 11:</strong> Esboce o gráfico da função \( f(x) = -x - 1 \).</summary>
+                <p><strong>Conceito:</strong> Desenhar o gráfico de uma linha reta que desce.</p>
+                <p><strong>Passo a Passo:</strong> O coeficiente linear é \( -1 \), então a reta cruza o eixo y no ponto \( (0, -1) \). A inclinação é \( -1 \). Se \( x=1 \), \( f(1) = -1 - 1 = -2 \). Então, a reta também passa pelo ponto \( (1, -2) \). Marque os pontos e desenhe uma linha reta que passe por eles.</p>
+                <p><strong>Solução:</strong> Um desenho de uma reta que desce, passando pelos pontos \( (0, -1) \) e \( (1, -2) \).</p>
+            </details>
+
+            <details>
+                <summary><strong>PROBLEMA 12:</strong> Se uma função afim tem inclinação 3 e passa pelo ponto \( (0, 5) \), qual é a sua expressão?</summary>
+                <p><strong>Conceito:</strong> Escrever a fórmula da função com a inclinação e o ponto de intercepto y.</p>
+                <p><strong>Passo a Passo:</strong> A forma geral é \( f(x) = ax + b \). A inclinação é \( 3 \), então \( a = 3 \). O ponto \( (0, 5) \) indica que o coeficiente linear é \( b = 5 \).</p>
+                <p><strong>Solução:</strong> \( f(x) = 3x + 5 \).</p>
+            </details>
+
+            <details>
+                <summary><strong>PROBLEMA 13:</strong> Determine a expressão da função afim que passa pelos pontos \( (1, 4) \) e \( (3, 10) \).</summary>
+                <p><strong>Conceito:</strong> Encontrar a fórmula de uma função afim a partir de dois pontos.</p>
+                <p><strong>Passo a Passo:</strong> Primeiro, encontre a inclinação \( a = \frac{y_2 - y_1}{x_2 - x_1} = \frac{10 - 4}{3 - 1} = \frac{6}{2} = 3 \). Agora, use um dos pontos, como \( (1, 4) \), na equação \( f(x) = 3x + b \): \( 4 = 3(1) + b \), o que dá \( b = 1 \).</p>
+                <p><strong>Solução:</strong> \( f(x) = 3x + 1 \).</p>
+            </details>
+
+            <details>
+                <summary><strong>PROBLEMA 14:</strong> Encontre a função afim cujo gráfico intercepta o eixo y em \( -2 \) e tem inclinação \( 1/2 \).</summary>
+                <p><strong>Conceito:</strong> Montar a fórmula da função com a inclinação e o intercepto y.</p>
+                <p><strong>Passo a Passo:</strong> A forma geral é \( f(x) = ax + b \). A inclinação é \( a = 1/2 \). O intercepto y é \( b = -2 \).</p>
+                <p><strong>Solução:</strong> \( f(x) = \frac{1}{2}x - 2 \).</p>
+            </details>
+
+            <details>
+                <summary><strong>PROBLEMA 15:</strong> Resolva a equação afim: \( 3(x - 1) + 2(x + 1) = 11 \).</summary>
+                <p><strong>Conceito:</strong> Resolver uma equação do 1º grau (linear).</p>
+                <p><strong>Passo a Passo:</strong> Use a propriedade distributiva: \( 3x - 3 + 2x + 2 = 11 \). Junte os termos semelhantes: \( 5x - 1 = 11 \). Isole \( x \): \( 5x = 12 \), então \( x = \frac{12}{5} \).</p>
+                <p><strong>Solução:</strong> \( x = \frac{12}{5} \).</p>
+            </details>
+
+            <details>
+                <summary><strong>PROBLEMA 16:</strong> Encontre o conjunto solução da inequação afim: \( 4x - 5 > 2x + 3 \).</summary>
+                <p><strong>Conceito:</strong> Resolver uma desigualdade (inequação) do 1º grau.</p>
+                <p><strong>Passo a Passo:</strong> Mova os termos com \( x \) para um lado e os números para o outro: \( 4x - 2x > 3 + 5 \). Junte os termos: \( 2x > 8 \). Divida por 2: \( x > 4 \).</p>
+                <p><strong>Solução:</strong> O conjunto solução é \( (4, \infty) \).</p>
+            </details>
+
+            <details>
+                <summary><strong>PROBLEMA 17:</strong> Determine o conjunto solução da inequação afim: \( -x + 7 \le 3 \).</summary>
+                <p><strong>Conceito:</strong> Resolver uma desigualdade do 1º grau, com atenção à multiplicação por número negativo.</p>
+                <p><strong>Passo a Passo:</strong> Mova o 7: \( -x \le 3 - 7 \), então \( -x \le -4 \). Multiplique por -1 e inverta o sinal da desigualdade: \( x \ge 4 \).</p>
+                <p><strong>Solução:</strong> O conjunto solução é \( [4, \infty) \).</p>
+            </details>
+
+            <details>
+                <summary><strong>PROBLEMA 18:</strong> Qual função afim tem um gráfico paralelo à reta \( y = 2x + 5 \) e passa por \( (1, 6) \)?</summary>
+                <p><strong>Conceito:</strong> Retas paralelas têm a mesma inclinação.</p>
+                <p><strong>Passo a Passo:</strong> A inclinação \( a \) deve ser 2. Então a função é \( f(x) = 2x + b \). Use o ponto \( (1, 6) \): \( 6 = 2(1) + b \), o que dá \( b = 4 \).</p>
+                <p><strong>Solução:</strong> \( f(x) = 2x + 4 \).</p>
+            </details>
+
+            <details>
+                <summary><strong>PROBLEMA 19:</strong> Qual função afim tem um gráfico perpendicular à reta \( y = -1/3 x + 2 \) e passa por \( (3, 1) \)?</summary>
+                <p><strong>Conceito:</strong> O produto das inclinações de retas perpendiculares é -1.</p>
+                <p><strong>Passo a Passo:</strong> A inclinação da reta dada é \( m_1 = -1/3 \). A inclinação da perpendicular é \( m_2 = 3 \) (pois \( (-1/3) \cdot 3 = -1 \)). A função é \( f(x) = 3x + b \). Use o ponto \( (3, 1) \): \( 1 = 3(3) + b \), o que dá \( b = -8 \).</p>
+                <p><strong>Solução:</strong> \( f(x) = 3x - 8 \).</p>
+            </details>
+
+            <details>
+                <summary><strong>PROBLEMA 20:</strong> Uma função afim \( f(x) = ax + b \) tem \( f(2) = 7 \) e \( f(5) = 16 \). Determine \( a \) e \( b \).</summary>
+                <p><strong>Conceito:</strong> Encontrar os coeficientes da função usando dois pontos.</p>
+                <p><strong>Passo a Passo:</strong> Calcule a inclinação: \( a = \frac{16 - 7}{5 - 2} = \frac{9}{3} = 3 \). Use o ponto \( (2, 7) \) em \( f(x) = 3x + b \): \( 7 = 3(2) + b \), o que dá \( b = 1 \).</p>
+                <p><strong>Solução:</strong> \( a = 3 \) e \( b = 1 \).</p>
+            </details>
+
+            <details>
+                <summary><strong>PROBLEMA 21:</strong> Se \( f(x) \) tem inclinação negativa e intercepta o eixo y em \( -3 \), qual a relação para \( f(x) > 0 \)?</summary>
+                <p><strong>Conceito:</strong> Analisar quando uma função afim é positiva.</p>
+                <p><strong>Passo a Passo:</strong> A função é \( f(x) = ax - 3 \) com \( a < 0 \). Queremos \( ax - 3 > 0 \), ou seja, \( ax > 3 \). Ao dividir por \( a \) (que é negativo), invertemos o sinal da desigualdade: \( x < \frac{3}{a} \).</p>
+                <p><strong>Solução:</strong> \( x \) deve ser menor que \( \frac{3}{a} \).</p>
+            </details>
+
+            <details>
+                <summary><strong>PROBLEMA 22:</strong> Função para o salário de um vendedor com R$ 800 fixo mais 5% de comissão.</summary>
+                <p><strong>Conceito:</strong> Modelagem de situação real com função afim.</p>
+                <p><strong>Passo a Passo:</strong> O valor fixo é o coeficiente linear (\( b = 800 \)). A comissão é a taxa de variação (\( a = 5\% = 0.05 \)). O salário \( S \) em função das vendas \( v \) é \( S(v) = 0.05v + 800 \).</p>
+                <p><strong>Solução:</strong> \( S(v) = 0.05v + 800 \).</p>
+            </details>
+
+            <details>
+                <summary><strong>PROBLEMA 23:</strong> Se \( f(x) = 2x + 1 \), calcule \( f(x+2) - f(x) \).</summary>
+                <p><strong>Conceito:</strong> Entender a taxa de variação.</p>
+                <p><strong>Passo a Passo:</strong> Calcule \( f(x+2) = 2(x+2) + 1 = 2x + 4 + 1 = 2x + 5 \). Depois, subtraia \( f(x) \): \( (2x + 5) - (2x + 1) = 2x + 5 - 2x - 1 = 4 \).</p>
+                <p><strong>Solução:</strong> 4.</p>
+            </details>
+
+            <details>
+                <summary><strong>PROBLEMA 24:</strong> Função para volume de um tanque de 100L que enche a 5L/min.</summary>
+                <p><strong>Conceito:</strong> Modelagem de situação de aumento constante.</p>
+                <p><strong>Passo a Passo:</strong> O volume inicial é o coeficiente linear (\( b = 100 \)). A taxa de enchimento é a inclinação (\( a = 5 \)). O volume \( V \) em função do tempo \( t \) é \( V(t) = 5t + 100 \).</p>
+                <p><strong>Solução:</strong> \( V(t) = 5t + 100 \).</p>
+            </details>
+
+            <details>
+                <summary><strong>PROBLEMA 25:</strong> Para que valor de \( k \) as retas \( y = 2kx + 1 \) e \( y = (k-1)x - 3 \) são paralelas?</summary>
+                <p><strong>Conceito:</strong> Retas paralelas têm a mesma inclinação.</p>
+                <p><strong>Passo a Passo:</strong> As inclinações devem ser iguais: \( 2k = k - 1 \). Resolvendo, \( 2k - k = -1 \), então \( k = -1 \).</p>
+                <p><strong>Solução:</strong> \( k = -1 \).</p>
+            </details>
+
+            <details>
+                <summary><strong>PROBLEMA 26:</strong> Para que valor de \( k \) as retas \( y = 3x + k \) e \( y = -1/3 x + 2 \) são perpendiculares?</summary>
+                <p><strong>Conceito:</strong> O produto das inclinações de retas perpendiculares é -1.</p>
+                <p><strong>Passo a Passo:</strong> A inclinação da primeira é \( m_1 = 3 \) e da segunda é \( m_2 = -1/3 \). O produto é \( 3 \times (-1/3) = -1 \). Elas já são perpendiculares. O valor de \( k \) não afeta a inclinação.</p>
+                <p><strong>Solução:</strong> Para qualquer valor de \( k \).</p>
+            </details>
+
+            <details>
+                <summary><strong>PROBLEMA 27:</strong> Resolva a inequação \( |2x - 1| < 5 \).</summary>
+                <p><strong>Conceito:</strong> Resolver inequações modulares.</p>
+                <p><strong>Passo a Passo:</strong> \( |A| < k \) se torna \( -k < A < k \). Então, \( -5 < 2x - 1 < 5 \). Some 1 a todas as partes: \( -4 < 2x < 6 \). Divida por 2: \( -2 < x < 3 \).</p>
+                <p><strong>Solução:</strong> O conjunto solução é \( (-2, 3) \).</p>
+            </details>
+
+            <details>
+                <summary><strong>PROBLEMA 28:</strong> Encontre o conjunto solução da inequação \( |x + 3| \ge 2 \).</summary>
+                <p><strong>Conceito:</strong> Resolver inequações modulares.</p>
+                <p><strong>Passo a Passo:</strong> \( |A| \ge k \) se torna \( A \ge k \) ou \( A \le -k \). Caso 1: \( x + 3 \ge 2 \implies x \ge -1 \). Caso 2: \( x + 3 \le -2 \implies x \le -5 \).</p>
+                <p><strong>Solução:</strong> O conjunto solução é \( (-\infty, -5] \cup [-1, \infty) \).</p>
+            </details>
+
+            <details>
+                <summary><strong>PROBLEMA 29:</strong> Problema do Táxi.</summary>
+                <p><strong>Conceito:</strong> Usar funções afins para resolver problemas práticos.</p>
+                <p><strong>Passo a Passo:</strong><br>a) \( C(d) = 1.50d + 4.00 \).<br>b) \( C(12) = 1.50 \times 12 + 4.00 = 18 + 4 = 22 \).<br>c) \( 1.50d + 4.00 = 25.00 \implies 1.50d = 21 \implies d = 14 \).</p>
+                <p><strong>Solução:</strong> a) \( C(d) = 1.50d + 4.00 \), b) R$ 22,00, c) 14 km.</p>
+            </details>
+
+            <details>
+                <summary><strong>PROBLEMA 30:</strong> Encontre o ponto de interseção de \( f(x) = 2x - 1 \) e \( g(x) = -x + 5 \).</summary>
+                <p><strong>Conceito:</strong> O ponto de interseção é onde \( f(x) = g(x) \).</p>
+                <p><strong>Passo a Passo:</strong> Igualamos as funções: \( 2x - 1 = -x + 5 \). Resolvendo para \( x \): \( 3x = 6 \implies x = 2 \). Substitua \( x=2 \) em uma das funções para encontrar \( y \): \( y = 2(2) - 1 = 3 \).</p>
+                <p><strong>Solução:</strong> O ponto de interseção é \( (2, 3) \).</p>
+            </details>
+
+            <details>
+                <summary><strong>PROBLEMA 31:</strong> Problema de conversão de temperatura.</summary>
+                <p><strong>Conceito:</strong> Usar uma função afim para conversão e análise.</p>
+                <p><strong>Passo a Passo:</strong><br>a) \( F(20) = \frac{9}{5}(20) + 32 = 36 + 32 = 68 \).<br>b) \( \frac{9}{5}T + 32 = 68 \implies \frac{9}{5}T = 36 \implies T = 20 \).<br>c) Para \( T=F \), resolvemos \( T = \frac{9}{5}T + 32 \). Isso resulta em \( \frac{-4}{5}T = 32 \), então \( T = -40 \).</p>
+                <p><strong>Solução:</strong> a) \( 68^\circ F \), b) \( 20^\circ C \), c) Sim, a \( -40^\circ \).</p>
+            </details>
+
+            <details>
+                <summary><strong>PROBLEMA 32:</strong> Se \( f(x) = mx+n \) e \( f(f(x)) = 4x + 3 \), quais os valores de \( m \) e \( n \)?</summary>
+                <p><strong>Conceito:</strong> Composição de funções.</p>
+                <p><strong>Passo a Passo:</strong> \( f(f(x)) = m(mx+n) + n = m^2x + mn + n \). Comparando com \( 4x + 3 \), temos \( m^2 = 4 \) e \( mn + n = 3 \). Da primeira equação, \( m = 2 \) ou \( m = -2 \).<br>Se \( m = 2 \), então \( 2n + n = 3 \implies 3n = 3 \implies n = 1 \).<br>Se \( m = -2 \), então \( -2n + n = 3 \implies -n = 3 \implies n = -3 \).</p>
+                <p><strong>Solução:</strong> Duas possibilidades: (m=2, n=1) ou (m=-2, n=-3).</p>
+            </details>
+
+        </section>
+-->
+    </div> </div> <canvas id="matrixCanvas"></canvas>
+<script src="matrix-rain.js" defer></script>
+<footer>
+    <div class="container">
+        <p>&copy; 2025 Nexus. Todos os direitos reservados.</p>
+        <p><a href="sobre.html">Sobre o Nexus</a></p>
+    </div>
+</footer>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        if (typeof renderMathInElement === 'function') {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "\\(", right: "\\)", display: false},
+                    {left: "\\[", right: "\\]", display: true}
+                ],
+                throwOnError: false
+            });
+        }
+    });
+</script>
+<div id="theme-config-icon" title="Configurar Tema">⚙️</div>
+<div id="theme-selector-panel" class="hidden">
+    <h3>Escolha um Tema:</h3>
+    <button data-theme="theme-default" title="Tema Green Circuit">Green Circuit</button>
+    <button data-theme="theme-digital-blue-green" title="Tema Digital Blue-Green">Digital Blue-Green</button>
+    <button data-theme="theme-retro-terminal" title="Tema Retro Terminal">Retro Terminal</button>
+    <button data-theme="theme-light-classic-neon-red" title="Tema Light Classic Neon Red">Light Classic</button>
+    <button data-theme="theme-blue-matrix" title="Tema Endless Blue">Endless Blue</button>
+    <button data-theme="theme-orange-matrix" title="Tema Juicy Orange">Juicy Orange</button>
+</div>
+<script src="theme-switcher.js" defer></script>
+</body>
+</html>
