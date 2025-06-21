@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus - Módulo Didático: Funções do Segundo Grau</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,700;1,400&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js"></script>
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<div id="page-wrapper">
+    <nav>
+        <ul>
+            <li><a href="../../index.html">Página Inicial</a></li>
+            <li><a href="../../recursos.html">Recursos</a></li>
+            <li><a href="../../desafios.html">Desafios</a></li>
+            <li><a href="../../midias.html">Mídias</a></li>
+            <li><a href="../../sobre.html">Sobre o Nexus</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h1>Módulo Didático: Desvendando as Funções do Segundo Grau (Função Quadrática)</h1>
+        <nav class="resource-internal-nav">
+            <ul>
+                <li><a href="../../index.html" class="nav-button">Página Inicial</a></li>
+                <li><a href="../../recursos.html" class="nav-button">Recursos</a></li>
+                <li><a href="../../explicacoes.html" class="nav-button">Explicações</a></li>
+                <li><strong>Funções do Segundo Grau</strong></li>
+            </ul>
+        </nav>
+
+        <article>
+            <h2>1. Introdução e Contextualização</h2>
+            <p>Olá, estudante! Já reparou na trajetória que uma bola de basquete faz ao ser arremessada para a cesta?  Ou no formato dos cabos de uma ponte suspensa?  Essas curvas, conhecidas como <strong>parábolas</strong>, estão por toda parte e são a representação gráfica de um dos tópicos mais importantes da matemática: a <strong>Função do Segundo Grau</strong>. </p>
+            <p>Neste módulo, vamos mergulhar nesse universo, entendendo não apenas as fórmulas, mas como elas descrevem situações do nosso dia a dia, desde o lucro de uma empresa até o lançamento de um foguete. </p>
+
+            <h3>Objetivos de Aprendizagem:</h3>
+            <p>Ao final deste módulo, você será capaz de: </p>
+            <ul>
+                <li>Identificar uma função do segundo grau e seus coeficientes. </li>
+                <li>Compreender o significado de cada coeficiente na estrutura da função. </li>
+                <li>Calcular as <strong>raízes (ou zeros)</strong> da função e interpretar seu significado. </li>
+                <li>Determinar o <strong>vértice</strong> da parábola e usá-lo para encontrar pontos de máximo ou mínimo. </li>
+                <li>Construir o gráfico de uma função quadrática. </li>
+                <li>Aplicar o conhecimento de funções quadráticas para resolver problemas práticos. </li>
+            </ul>
+
+            <h3>Conexão com Conhecimentos Prévios:</h3>
+            <p>Para aproveitar ao máximo este conteúdo, é importante que você já tenha familiaridade com: </p>
+            <ul>
+                <li><strong>Funções do Primeiro Grau:</strong> O que é uma função e como ela relaciona variáveis. </li>
+                <li><strong>Plano Cartesiano:</strong> Como marcar pontos (x, y). </li>
+                <li><strong>Equações do Segundo Grau:</strong> A fórmula de Bhaskara para encontrar as raízes de uma equação. </li>
+            </ul>
+        </article>
+
+        <article>
+            <h2>2. Desenvolvimento do Conteúdo</h2>
+            <h3>Teoria: O que é uma Função do Segundo Grau?</h3>
+            <p>Uma <strong>Função do Segundo Grau</strong>, ou <strong>Função Quadrática</strong>, é qualquer função que pode ser escrita na forma: </p>
+            <p>\[f(x) = ax^2 + bx + c\]</p>
+            <p>Onde: </p>
+            <ul>
+                <li>\(x\) é a variável independente. </li>
+                <li>\(a\), \(b\) e \(c\) são números reais chamados <strong>coeficientes</strong>. </li>
+                <li>A condição mais importante é que \(a \neq 0\) (o coeficiente \(a\) não pode ser zero, senão a função se torna do primeiro grau!). </li>
+            </ul>
+            <p>O gráfico de uma função quadrática é sempre uma curva chamada <strong>parábola</strong>. </p>
+
+            <h3>Os Coeficientes e o Gráfico</h3>
+            <ul>
+                <li><strong>Coeficiente \(a\):</strong> Define a <strong>concavidade</strong> da parábola. 
+                    <ul>
+                        <li>Se \(a > 0\), a parábola tem concavidade voltada para <strong>cima</strong> (formato de "U", feliz 😊). </li>
+                        <li>Se \(a < 0\), a parábola tem concavidade voltada para <strong>baixo</strong> (formato de "U" invertido, triste 😟). </li>
+                    </ul>
+                </li>
+                <li><strong>Coeficiente \(c\):</strong> Indica o ponto onde a parábola <strong>corta o eixo y</strong>. 
+                    <ul>
+                        <li>Isso acontece quando \(x = 0\), então \(f(0) = c\). O ponto é \((0, c)\). </li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3>Calculando as Raízes (Zeros da Função)</h3>
+            <p>As <strong>raízes</strong> são os valores de \(x\) para os quais \(f(x) = 0\). São os pontos onde a parábola corta o <strong>eixo x</strong>.  Para encontrá-las, usamos a famosa <strong>Fórmula de Bhaskara</strong>. </p>
+
+            <h4>Calcular o Discriminante (Delta): </h4>
+            <p>\[\Delta = b^2 - 4ac\]</p>
+            <ul>
+                <li>Se \(\Delta > 0\), a função tem <strong>duas raízes reais e distintas</strong>. </li>
+                <li>Se \(\Delta = 0\), a função tem <strong>uma raiz real</strong> (ou duas raízes iguais). </li>
+                <li>Se \(\Delta < 0\), a função <strong>não tem raízes reais</strong>. </li>
+            </ul>
+
+            <h4>Calcular as Raízes: </h4>
+            <p>\[x = \frac{-b \pm \sqrt{\Delta}}{2a}\]</p>
+
+            <h3>O Vértice da Parábola</h3>
+            <p>O <strong>vértice</strong> é o ponto mais importante da parábola.  Ele representa o ponto de <strong>mínimo</strong> (se \(a > 0\)) ou o ponto de <strong>máximo</strong> (se \(a < 0\)). </p>
+            <p>As coordenadas do vértice (V) são dadas por \((Xv, Yv)\): </p>
+            <ul>
+                <li><strong>Coordenada X do Vértice:</strong> \[Xv = \frac{-b}{2a}\]</li>
+                <li><strong>Coordenada Y do Vértice:</strong> \[Yv = \frac{-\Delta}{4a}\]</li>
+            </ul>
+        </article>
+
+        <article>
+            <h2>Exemplos Resolvidos</h2>
+            <h3>Exemplo 1: Básico</h3>
+            <p>Dada a função \(f(x) = x^2 - 6x + 5\), encontre as raízes, o vértice e esboce o gráfico.</p>
+            <p><strong>Passo 1: Identificar os coeficientes.</strong> \(a = 1\), \(b = -6\), \(c = 5\). Como \(a > 0\), a concavidade é para cima. </p>
+            <p><strong>Passo 2: Calcular as raízes.</strong> </p>
+            <p>\[\Delta = (-6)^2 - 4 \cdot 1 \cdot 5 = 36 - 20 = 16\]</p>
+            <p>\[x = \frac{-(-6) \pm \sqrt{16}}{2 \cdot 1} = \frac{6 \pm 4}{2}\]</p>
+            <p>\(x' = \frac{6 + 4}{2} = 5\)</p>
+            <p>\(x'' = \frac{6 - 4}{2} = 1\)</p>
+            <p>As raízes são <strong>1 e 5</strong>. </p>
+            <p><strong>Passo 3: Calcular o vértice.</strong> </p>
+            <p>\[Xv = \frac{-(-6)}{2 \cdot 1} = \frac{6}{2} = 3\]</p>
+            <p>\[Yv = \frac{-(16)}{4 \cdot 1} = \frac{-16}{4} = -4\]</p>
+            <p>O vértice é \((3, -4)\). Este é o ponto de mínimo da função. </p>
+            <p><strong>Passo 4: Ponto de intercepto com o eixo y.</strong> </p>
+            <p>O coeficiente \(c\) é 5, então a parábola corta o eixo y no ponto \((0, 5)\). </p>
+            <p><strong>Esboço do Gráfico:</strong> Com os pontos \((1,0)\), \((5,0)\), \((3,-4)\) e \((0,5)\), podemos esboçar a parábola. </p>
+
+            <h3>Exemplo 2: Intermediário - A Trajetória do Projétil</h3>
+            <p>A trajetória de um projétil é descrita pela função \(h(t) = -t^2 + 4t + 5\), onde \(h\) é a altura em metros e \(t\) é o tempo em segundos. </p>
+            <p>Qual a altura máxima atingida e em que instante isso ocorre? </p>
+            <p><strong>Análise:</strong> O problema pede a <strong>altura máxima</strong>, o que corresponde ao <strong>Y do vértice (Yv)</strong>, e o <strong>instante</strong> em que isso ocorre, que é o <strong>X do vértice (Xv)</strong>. </p>
+            <p><strong>Coeficientes:</strong> \(a = -1\), \(b = 4\), \(c = 5\). Como \(a < 0\), a concavidade é para baixo, o que faz sentido para uma trajetória. </p>
+            <p><strong>Cálculo do Vértice:</strong> </p>
+            <p>\[Xv = \frac{-b}{2a} = \frac{-4}{2 \cdot (-1)} = \frac{-4}{-2} = 2\]</p>
+            <p>\[\Delta = b^2 - 4ac = 4^2 - 4 \cdot (-1) \cdot 5 = 16 + 20 = 36\]</p>
+            <p>\[Yv = \frac{-\Delta}{4a} = \frac{-36}{4 \cdot (-1)} = \frac{-36}{-4} = 9\]</p>
+            <p><strong>Resposta:</strong> A altura máxima atingida é de <strong>9 metros</strong>, e isso ocorre no instante de <strong>2 segundos</strong>. </p>
+
+            <h3>Exemplo 3: Avançado - O Lucro da Empresa</h3>
+            <p>Uma empresa descobriu que seu lucro L (em milhares de reais) ao vender \(x\) unidades de um produto é dado por \(L(x) = -x^2 + 80x - 700\). Quantas unidades a empresa deve vender para obter o lucro máximo?  E qual é esse lucro? </p>
+            <p><strong>Análise:</strong> Novamente, "lucro máximo" nos remete ao vértice da parábola.  O número de unidades para o lucro máximo é o Xv, e o lucro máximo é o Yv. </p>
+            <p><strong>Coeficientes:</strong> \(a = -1\), \(b = 80\), \(c = -700\). </p>
+            <p><strong>Cálculo do Xv (unidades para lucro máximo):</strong> </p>
+            <p>\[Xv = \frac{-b}{2a} = \frac{-80}{2 \cdot (-1)} = \frac{-80}{-2} = 40\]</p>
+            <p><strong>Cálculo do Yv (lucro máximo):</strong> Podemos usar a fórmula ou, de forma mais prática, calcular \(L(40)\): </p>
+            <p>\[L(40) = -(40)^2 + 80 \cdot (40) - 700\]</p>
+            <p>\[L(40) = -1600 + 3200 - 700 = 900\]</p>
+            <p><strong>Resposta:</strong> A empresa deve vender <strong>40 unidades</strong> para obter um lucro máximo de <strong>R$ 900.000,00</strong> (lembre-se que o lucro é em milhares). </p>
+        </article>
+
+        <article>
+            <h2>Sugestões de Recursos Visuais</h2>
+            <p>A melhor forma de "sentir" como a função quadrática funciona é visualizando-a! </p>
+            
+            <h3>Gráfico Interativo com Sliders (Sugestão para implementação futura)</h3>
+            <p>Imagine uma ferramenta onde você possa controlar os coeficientes \(a\), \(b\) e \(c\) de uma função quadrática \((f(x) = ax^2 + bx + c)\) usando "sliders".  À medida que você move cada slider, o gráfico da parábola se ajustaria em tempo real, permitindo que você veja o impacto de cada coeficiente:</p>
+            <ul>
+                <li>Ao mover o slider '\(a\)', a parábola viraria para cima ou para baixo, e ficaria mais larga ou estreita. </li>
+                <li>Ao mover o slider '\(b\)', a parábola se deslocaria horizontalmente, alterando a posição do vértice.</li>
+                <li>Ao mover o slider '\(c\)', a parábola subiria ou desceria na tela, cortando o eixo y em diferentes pontos. </li>
+            </ul>
+            <p>Essa interação seria inestimável para uma compreensão intuitiva de como as funções do segundo grau se comportam. Para uma implementação real, seriam utilizadas bibliotecas de plotagem de gráficos em JavaScript (como Plotly.js ou Chart.js) para criar a visualização dinâmica.</p>
+
+            <h3>Infográfico</h3>
+            <p>Um infográfico visualmente atraente pode ilustrar uma parábola com todos os seus pontos importantes claramente rotulados: as <strong>raízes \((x' \text{ e } x'')\), o vértice \((Xv, Yv)\)</strong>, o <strong>eixo de simetria</strong> (a linha vertical que passa pelo vértice) e o <strong>ponto de intercepto do eixo y \((c)\)</strong>. </p>
+
+            <h3>Tabela Resumo do Discriminante (\(\Delta\))</h3>
+            <p>Uma tabela simples pode resumir a relação entre o valor de \(\Delta\) e o número de raízes reais da função, com pequenos esboços gráficos para cada caso:</p>
+            <table class="summary-table">
+                <thead>
+                    <tr>
+                        <th>Valor de \(\Delta\)</th>
+                        <th>Número de Raízes Reais</th>
+                        <th>Representação Gráfica</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>\(\Delta > 0\)</td>
+                        <td>Duas raízes reais distintas</td>
+                        <td>Parábola corta o eixo x em dois pontos. </td>
+                    </tr>
+                    <tr>
+                        <td>\(\Delta = 0\)</td>
+                        <td>Uma raiz real (ou duas raízes iguais)</td>
+                        <td>Parábola toca o eixo x em um único ponto (o vértice). </td>
+                    </tr>
+                    <tr>
+                        <td>\(\Delta < 0\)</td>
+                        <td>Nenhuma raiz real</td>
+                        <td>Parábola não intercepta o eixo x. </td>
+                    </tr>
+                </tbody>
+            </table>
+        </article>
+
+        <article>
+            <h2>Situações-Problema</h2>
+            <h3>O Canteiro Retangular:</h3>
+            <p>Um jardineiro tem 40 metros de cerca para delimitar um canteiro retangular.  Uma das laterais do canteiro ficará junto a um muro, não precisando de cerca.  Quais devem ser as dimensões do canteiro para que sua área seja a máxima possível? </p>
+
+            <h3>Ponte Pênsil:</h3>
+            <p>O arco de aço de uma ponte pênsil tem o formato de uma parábola.  A distância entre suas bases é de 100 metros e sua altura máxima é de 25 metros.  Considerando o centro da base como a origem (0,0) de um plano cartesiano, qual seria a altura do arco em um ponto a 20 metros de distância do centro? </p>
+        </article>
+
+        <article>
+            <h2>3. Atividades e Exercícios</h2>
+            <h3>Exercícios de Fixação</h3>
+            <ol>
+                <li>(Múltipla Escolha) Qual das funções a seguir NÃO é uma função do segundo grau? <br>
+                    a) \(f(x) = 3x^2 - 1\)<br>
+                    b) \(f(x) = 5 - x^2\)<br>
+                    c) \(f(x) = x(x - 1)\)<br>
+                    d) \(f(x) = 2x + 7\)
+                </li>
+                <li>(Preenchimento) Para a função \(f(x) = -2x^2 + 8x - 6\), a concavidade da parábola é voltada para __________, pois o coeficiente \(a\) é __________. O ponto onde o gráfico corta o eixo y é __________. </li>
+                <li>(Discursiva) Encontre as coordenadas do vértice da função \(f(x) = 2x^2 - 4x + 1\). </li>
+                <li>Calcule as raízes (se existirem) da função \(g(x) = x^2 - x - 12\). </li>
+                <li>Associe cada função ao seu respectivo valor de discriminante (\(\Delta\)): <br>
+                    (A) \(f(x) = x^2 - 5x + 6\)<br>
+                    (B) \(f(x) = x^2 - 2x + 1\)<br>
+                    (C) \(f(x) = x^2 + x + 1\)<br>
+                    ( ) \(\Delta = 0\)<br>
+                    ( ) \(\Delta < 0\)<br>
+                    ( ) \(\Delta > 0\)
+                </li>
+            </ol>
+
+            <h3>Exercícios de Aplicação</h3>
+            <ol>
+                <li>O custo de produção de \(x\) sapatos é dado pela função \(C(x) = x^2 - 40x + 410\). Quantos sapatos devem ser produzidos para que o custo seja mínimo?  Qual é esse custo mínimo? </li>
+                <li>Uma bola é chutada a partir do chão, e sua altura \(h\) em função do tempo \(t\) (em segundos) é dada por \(h(t) = -5t^2 + 20t\).  Depois de quanto tempo a bola retornará ao chão? </li>
+            </ol>
+
+            <h3>Desafio</h3>
+            <p>Você quer construir uma janela que consiste em um retângulo com um semicírculo no topo.  O perímetro total da janela deve ser de 10 metros.  Encontre a função que descreve a área total da janela em função do raio do semicírculo e determine o raio que maximiza essa área. </p>
+        </article>
+
+        <article>
+            <h2>Gabarito e Resoluções</h2>
+            <h3>Fixação</h3>
+            <details>
+                <summary>Mostrar/Ocultar Respostas</summary>
+                <ol>
+                    <li><strong>d)</strong> \(f(x) = 2x + 7\) é uma função do primeiro grau. </li>
+                    <li>
+                        A concavidade da parábola é voltada para <strong>baixo</strong>, pois o coeficiente \(a\) é <strong>negativo</strong>. <br>
+                        O ponto onde o gráfico corta o eixo y é <strong>\((0, -6)\)</strong>. 
+                    </li>
+                    <li>Vértice: <strong>\((1, -1)\)</strong>. (\(Xv = -(-4)/(2 \cdot 2) = 1\); \(Yv = 2(1)^2 - 4(1) + 1 = -1\)) </li>
+                    <li>Raízes: <strong>\(4\) e \(-3\)</strong>. (\(\Delta = (-1)^2 - 4 \cdot 1 \cdot (-12) = 49\); \(x = (1 \pm 7)/2\)) </li>
+                    <li>(B) \(\Delta = 0\), (C) \(\Delta < 0\), (A) \(\Delta > 0\). </li>
+                </ol>
+            </details>
+
+            <h3>Aplicação</h3>
+            <details>
+                <summary>Mostrar/Ocultar Respostas</summary>
+                <ol>
+                    <li>
+                        <strong>20 sapatos</strong>; Custo mínimo de <strong>R$ 10,00</strong>. <br>
+                        (O número de sapatos é o \(Xv = -(-40)/(2 \cdot 1) = 20\). O custo é \(C(20) = 20^2 - 40 \cdot 20 + 410 = 10\)). 
+                    </li>
+                    <li><strong>4 segundos</strong>. (Retornar ao chão significa \(h(t) = 0\). As raízes são \(t=0\) (momento do chute) e \(t=4\)). </li>
+                </ol>
+            </details>
+
+            <h3>Desafio</h3>
+            <details>
+                <summary>Mostrar/Ocultar Resposta</summary>
+                <p><strong>Resumo da resolução:</strong> A chave é escrever o perímetro e a área em função do raio \(r\) e da altura \(h\) do retângulo.  Isolar \(h\) na equação do perímetro e substituir na equação da área.  Você obterá uma função quadrática da área em função de \(r\).  O raio que maximiza a área será o \(Xv\) (neste caso, \(Rv\)) dessa função.  O raio é \(r = 10 / (\pi + 4)\). </p>
+            </details>
+        </article>
+
+        <article>
+            <h2>4. Recursos Adicionais e Complementares</h2>
+            <h3>Glossário Rápido</h3>
+            <ul>
+                <li><strong>Função Quadrática:</strong> Função na forma \(f(x) = ax^2 + bx + c\). </li>
+                <li><strong>Parábola:</strong> Curva que representa o gráfico da função quadrática. </li>
+                <li><strong>Vértice:</strong> Ponto de máximo ou mínimo da parábola. </li>
+                <li><strong>Raízes (ou Zeros):</strong> Valores de \(x\) onde o gráfico corta o eixo \(x\) \((f(x)=0)\). </li>
+                <li><strong>Concavidade:</strong> A direção para a qual a parábola se abre (para cima ou para baixo). </li>
+                <li><strong>Discriminante (\(\Delta\)):</strong> Valor \((b^2-4ac)\) que indica o número de raízes reais da função. </li>
+            </ul>
+
+            <h3>Resumo do Capítulo</h3>
+            <p>A função do segundo grau, \(f(x) = ax^2 + bx + c\), é um modelo matemático poderoso cujo gráfico é uma parábola.  O coeficiente \(a\) determina a concavidade (para cima se \(a>0\), para baixo se \(a<0\)), enquanto \(c\) mostra onde o gráfico intercepta o eixo \(y\).  Seus pontos mais cruciais são as <strong>raízes</strong>, encontradas com a fórmula de Bhaskara, e o <strong>vértice</strong>, que revela o ponto de máximo ou mínimo da função, sendo essencial para resolver problemas de otimização. </p>
+
+            <h3>Materiais Complementares</h3>
+            <h4>Vídeos: </h4>
+            <ul>
+                <li>Khan Academy: Função Quadrática (Introdução)</li>
+                <li>Matemática Rio com Prof. Rafael Procopio (YouTube): Busque por "Função Quadrática" para aulas dinâmicas.</li>
+            </ul>
+            <h4>Sites: </h4>
+            <ul>
+                <li>Brasil Escola: Função do 2º Grau</li>
+                <li>Mundo Educação: Artigos detalhados e exercícios.</li>
+            </ul>
+            <h4>Livros: </h4>
+            <ul>
+                <li>Qualquer livro didático de matemática do Ensino Médio de autores consagrados como Gelson Iezzi, Manoel Paiva ou Dante.</li>
+            </ul>
+
+            <h3>Recurso Interativo Sugerido</h3>
+            <p><strong>Geogebra:</strong> Acesse o Geogebra online e experimente digitar uma função como \(f(x) = x^2\).  Depois, crie sliders para os coeficientes \(a\), \(b\) e \(c\) para visualizar o impacto de cada um na forma e posição da parábola.  É a melhor forma de "sentir" como a função funciona! </p>
+        </article>
+    </div> </div> <canvas id="matrixCanvas"></canvas>
+<script src="../../matrix-rain.js" defer></script>
+<footer>
+    <div class="container">
+        <p>&copy; 2025 Nexus. Todos os direitos reservados.</p>
+        <p><a href="../../sobre.html">Sobre o Nexus</a></p>
+    </div>
+</footer>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        if (typeof renderMathInElement === 'function') {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "\\[", right: "\\]", display: true},
+                    {left: "\\(", right: "\)", display: false}
+                ],
+                throwOnError: false
+            });
+        }
+    });
+</script>
+<div id="theme-config-icon" title="Configurar Tema">⚙️</div>
+<div id="theme-selector-panel" class="hidden">
+    <h3>Escolha um Tema:</h3>
+    <button data-theme="theme-default" title="Tema Green Circuit">Green Circuit</button>
+    <button data-theme="theme-digital-blue-green" title="Tema Digital Blue-Green">Digital Blue-Green</button>
+    <button data-theme="theme-retro-terminal" title="Tema Retro Terminal">Retro Terminal</button>
+    <button data-theme="theme-light-classic-neon-red" title="Tema Light Classic Neon Red">Light Classic</button>
+    <button data-theme="theme-blue-matrix" title="Tema Endless Blue">Endless Blue</button>
+    <button data-theme="theme-orange-matrix" title="Tema Juicy Orange">Juicy Orange</button>
+</div>
+<script src="../../theme-switcher.js" defer></script>
+</body>
+</html>
