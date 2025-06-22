@@ -3,55 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nexus - Módulo: Funções do 2º Grau</title>
+    <title>Nexus - Arquivos - Função do Segundo Grau</title>
+    <link rel="stylesheet" href="../../style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,700;1,400&family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css">
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="stylesheet" href="../../style.css">
     <style>
-        .interactive-plotter {
-            background-color: rgba(20, 30, 40, 0.5);
-            border: 1px solid var(--container-border-color);
-            border-radius: var(--container-border-radius);
-            padding: 1.5rem;
+        .graph-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             margin-top: 2rem;
             margin-bottom: 2rem;
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 1rem;
+            border: 1px solid var(--container-border-color);
+            border-radius: var(--container-border-radius);
         }
-        .plot-controls {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 1.5rem;
+        #parabolaCanvas {
+            background-color: #fff;
+            border-radius: 4px;
+            border: 1px solid #ccc;
         }
-        .plot-controls label {
+        .controls {
+            width: 100%;
+            max-width: 500px;
+            margin-top: 1rem;
             font-family: var(--font-family-body);
+        }
+        .control-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+            gap: 10px;
+        }
+        .control-group label {
+            min-width: 80px;
             font-weight: bold;
             color: var(--main-text-color);
         }
-        .plot-controls input {
-            width: 60px;
-            padding: 8px;
-            background-color: var(--primary-bg-color);
-            color: var(--main-text-color);
-            border: 1px solid var(--secondary-text-color);
-            border-radius: 4px;
-            font-family: var(--font-family-monospace);
-        }
-        .plot-controls button {
-            padding: 10px 20px;
+        .control-group input[type="range"] {
+            flex-grow: 1;
             cursor: pointer;
         }
-        #parabola-info {
-            text-align: center;
-            margin-top: 1rem;
-            font-family: var(--font-family-monospace);
-            color: var(--secondary-text-color);
+        .control-group span {
+            min-width: 50px;
+            text-align: right;
+            font-weight: bold;
+            color: var(--link-color);
         }
     </style>
 </head>
@@ -68,156 +70,152 @@
     </nav>
 
     <div class="container">
-        <h1>Módulo Didático: Funções do 2° Grau</h1>
+        <h1>Desvendando as Funções do Segundo Grau (Função Quadrática)</h1>
+        <nav class="resource-internal-nav">
+          <ul>
+            <li><a href="../../index.html" class="nav-button">Página Inicial</a></li>
+            <li><a href="../../recursos.html" class="nav-button">Recursos</a></li>
+            <li><a href="../../arquivos_recursos.html" class="nav-button">Arquivos</a></li>
+            <li><a href="../matematica.html" class="nav-button">Matemática</a></li>
+            <li><strong>Função do 2° Grau</strong></li>
+          </ul>
+        </nav>
 
         <article>
             <h2>1. Introdução e Contextualização</h2>
-            <p>Olá, estudante! Vamos embarcar em uma jornada pelo mundo das <strong>funções do 2° grau</strong>, também conhecidas como <strong>funções quadráticas</strong>.  Você já percebeu que, ao chutar uma bola, lançar um objeto para o alto ou até mesmo na arquitetura de pontes e arcos, existe uma trajetória curva muito comum?  Essa curva é uma <strong>parábola</strong>, e ela é a representação gráfica de uma função do 2º grau. </p>
-            <p>Neste módulo, vamos desvendar todos os segredos dessas funções, entendendo como seus parâmetros influenciam seus gráficos e como podemos aplicá-las para resolver problemas práticos, desde otimizar lucros até prever trajetórias. </p>
-        </article>
-
-        <article>
+            <p>Olá, estudante! Já reparou na trajetória que uma bola de basquete faz ao ser arremessada para a cesta?  Ou no formato dos cabos de uma ponte suspensa?  Essas curvas, conhecidas como <strong>parábolas</strong>, estão por toda parte e são a representação gráfica de um dos tópicos mais importantes da matemática: a <strong>Função do Segundo Grau</strong>. </p>
+            <p>Neste módulo, vamos mergulhar nesse universo, entendendo não apenas as fórmulas, mas como elas descrevem situações do nosso dia a dia, desde o lucro de uma empresa até o lançamento de um foguete. </p>
+            
             <h3>Objetivos de Aprendizagem:</h3>
             <p>Ao final deste módulo, você será capaz de:</p>
             <ul>
-                <li>Definir uma função do 2º grau e identificar seus coeficientes.</li>
-                <li>Construir e interpretar o gráfico de uma função quadrática (a parábola). </li>
-                <li>Relacionar o coeficiente $a$ com a concavidade da parábola.</li>
-                <li>Calcular e interpretar os zeros (ou raízes) da função. </li>
-                <li>Determinar as coordenadas do vértice e os pontos de máximo ou mínimo.</li>
-                <li>Definir o eixo de simetria e o conjunto imagem da função. </li>
-                <li>Analisar o sinal da função e resolver inequações do 2º grau. </li>
-                <li>Aplicar os conceitos de função quadrática na resolução de situações-problema. </li>
+                <li>Identificar uma função do segundo grau e seus coeficientes.</li>
+                <li>Compreender o significado de cada coeficiente na estrutura da função. </li>
+                <li>Calcular as <strong>raízes (ou zeros)</strong> da função e interpretar seu significado. </li>
+                <li>Determinar o <strong>vértice</strong> da parábola e usá-lo para encontrar pontos de máximo ou mínimo. </li>
+                <li>Construir o gráfico de uma função quadrática. </li>
+                <li>Aplicar o conhecimento de funções quadráticas para resolver problemas práticos.</li>
             </ul>
-        </article>
 
-        <article>
-            <h3>Conhecimentos Prévios:</h3>
-            <p>Para um melhor aproveitamento, é importante que você já tenha familiaridade com:</p>
+            <h3>Conexão com Conhecimentos Prévios:</h3>
+            <p>Para aproveitar ao máximo este conteúdo, é importante que você já tenha familiaridade com:</p>
             <ul>
-                <li>Funções do 1º grau.</li>
-                <li>Resolução de equações do 2º grau (uso da fórmula de Bhaskara). </li>
-                <li>Plano cartesiano.</li>
+                <li><strong>Funções do Primeiro Grau:</strong> O que é uma função e como ela relaciona variáveis.</li>
+                <li><strong>Plano Cartesiano:</strong> Como marcar pontos (x, y). </li>
+                <li><strong>Equações do Segundo Grau:</strong> A fórmula de Bhaskara para encontrar as raízes de uma equação.</li>
             </ul>
         </article>
 
         <article>
             <h2>2. Desenvolvimento do Conteúdo</h2>
-
-            <h3>I. Definição</h3>
-            <p>Uma função $f: \mathbb{R} \to \mathbb{R}$ é chamada de <strong>função quadrática</strong> ou <strong>função do 2° grau</strong> quando existem números reais $a$, $b$ e $c$, com $a \neq 0$, tal que a lei de associação seja:</p>
-            <p style="text-align: center; font-size: 1.2rem;">$f(x) = ax^2 + bx + c$</p>
-            <p>Os números $a$, $b$ e $c$ são os <strong>coeficientes</strong> da função.</p>
+            <h3>Teoria: O que é uma Função do Segundo Grau?</h3>
+            <p>Uma <strong>Função do Segundo Grau</strong>, ou <strong>Função Quadrática</strong>, é qualquer função que pode ser escrita na forma: </p>
+            $$f(x) = ax^2 + bx + c$$
+            <p>Onde:</p>
             <ul>
-                <li>$a$: coeficiente quadrático (sempre diferente de zero). </li>
-                <li>$b$: coeficiente linear. </li>
-                <li>$c$: termo independente. </li>
+                <li>$x$ é a variável independente.</li>
+                <li>$a$, $b$ e $c$ são números reais chamados <strong>coeficientes</strong>. </li>
+                <li>A condição mais importante é que $a \neq 0$ (o coeficiente $a$ não pode ser zero, senão a função se torna do primeiro grau!). </li>
             </ul>
-            <p><strong>Exemplo:</strong> Na função $f(x) = 2x^2 - 8x + 6$, temos $a=2$, $b=-8$ e $c=6$.</p>
+            <p>O gráfico de uma função quadrática é sempre uma curva chamada <strong>parábola</strong>. </p>
 
-            <h3>II. Gráfico e Concavidade</h3>
-            <p>O gráfico de uma função quadrática é uma curva chamada <strong>parábola</strong>.  A característica mais marcante dessa curva é a sua <strong>concavidade</strong> (sua "abertura").  A concavidade da parábola é definida pelo sinal do coeficiente $a$: </p>
-            <ul>
-                <li>Se $a > 0$, a parábola tem a concavidade voltada <strong>para cima</strong> (imagine um "sorriso" 😊). </li>
-                <li>Se $a < 0$, a parábola tem a concavidade voltada <strong>para baixo</strong> (imagine uma carinha "triste" 😟). </li>
-            </ul>
-
-            <div class="interactive-plotter">
-                <h4 style="text-align:center;">Recurso Interativo: Plote sua Parábola</h4>
-                <div class="plot-controls">
-                    <label for="coeff-a">$a$: </label>
-                    <input type="number" id="coeff-a" value="1" step="0.5">
-                    <label for="coeff-b">$b$: </label>
-                    <input type="number" id="coeff-b" value="-2" step="0.5">
-                    <label for="coeff-c">$c$: </label>
-                    <input type="number" id="coeff-c" value="-3" step="0.5">
-                    <button id="plot-button" class="themed-button">Plotar Gráfico</button>
+            <h3>Recurso Interativo: Explore a Parábola</h3>
+            <p>Use os controles deslizantes abaixo para alterar os valores dos coeficientes $a$, $b$ e $c$ e veja como a parábola se comporta em tempo real. </p>
+            <div class="graph-container">
+                <canvas id="parabolaCanvas" width="500" height="400"></canvas>
+                <div class="controls">
+                    <div class="control-group">
+                        <label for="a-slider">Coeficiente a:</label>
+                        <input type="range" id="a-slider" min="-5" max="5" value="1" step="0.1">
+                        <span id="a-value">1.0</span>
+                    </div>
+                    <div class="control-group">
+                        <label for="b-slider">Coeficiente b:</label>
+                        <input type="range" id="b-slider" min="-10" max="10" value="-6" step="0.1">
+                        <span id="b-value">-6.0</span>
+                    </div>
+                    <div class="control-group">
+                        <label for="c-slider">Coeficiente c:</label>
+                        <input type="range" id="c-slider" min="-10" max="10" value="5" step="0.1">
+                        <span id="c-value">5.0</span>
+                    </div>
                 </div>
-                <canvas id="parabolaCanvas"></canvas>
-                <div id="parabola-info"></div>
             </div>
 
-            <h3>III. Zeros da Função (Raízes)</h3>
-            <p>Os <strong>zeros</strong> ou <strong>raízes</strong> de uma função quadrática são os valores de $x$ para os quais $f(x) = 0$.  Geometricamente, são as abscissas dos pontos onde a parábola cruza o eixo X.  Para encontrar os zeros, resolvemos a equação do 2º grau $ax^2 + bx + c = 0$, utilizando a <strong>Fórmula de Bhaskara</strong>:</p>
-            <p style="text-align: center; font-size: 1.2rem;">$x = \frac{-b \pm \sqrt{\Delta}}{2a}$, onde $\Delta = b^2 - 4ac$ (discriminante)</p>
-            <p>A quantidade de zeros reais da função depende do valor do discriminante $\Delta$:</p>
+            <h3>Os Coeficientes e o Gráfico</h3>
             <ul>
-                <li><strong>$\Delta > 0$:</strong> A função possui <strong>duas raízes reais e distintas</strong>. A parábola cruza o eixo X em dois pontos. </li>
-                <li><strong>$\Delta = 0$:</strong> A função possui <strong>uma raiz real dupla</strong>. A parábola tangencia (toca em um único ponto) o eixo X. </li>
-                <li><strong>$\Delta < 0$:</strong> A função <strong>não possui raízes reais</strong>. A parábola não cruza o eixo X. </li>
-            </ul>
-            
-            <h4>Exemplos Resolvidos:</h4>
-            <p><strong>1. Zeros de $f(x) = x^2 - 7x + 10$:</strong></p>
-            <p>$\Delta = (-7)^2 - 4(1)(10) = 49 - 40 = 9$. Como $\Delta > 0$, temos duas raízes: $x = \frac{7 \pm \sqrt{9}}{2}$, então $x_1 = 5$ e $x_2 = 2$. </p>
-            
-            <p><strong>2. Zeros de $f(x) = -x^2 + 4x - 4$:</strong></p>
-            <p>$\Delta = (4)^2 - 4(-1)(-4) = 16 - 16 = 0$. Como $\Delta = 0$, temos uma raiz dupla: $x = \frac{-4 \pm \sqrt{0}}{-2} = 2$. </p>
-            
-            <p><strong>3. Zeros de $f(x) = x^2 + 2x + 5$:</strong></p>
-            <p>$\Delta = (2)^2 - 4(1)(5) = 4 - 20 = -16$. Como $\Delta < 0$, a função não possui zeros reais. </p>
-            
-
-            <h3>IV. Vértice, Ponto de Máximo e Mínimo</h3>
-            <p>O <strong>vértice (V)</strong> é o ponto mais importante da parábola, representando o ponto de <strong>mínimo</strong> (se $a > 0$) ou de <strong>máximo</strong> (se $a < 0$).  As coordenadas do vértice $(X_v, Y_v)$ são dadas por:</p>
-            <p style="text-align: center; font-size: 1.2rem;">$X_v = \frac{-b}{2a}$ e $Y_v = \frac{-\Delta}{4a}$</p>
-            <p>$X_v$ é o valor de x onde a função atinge seu valor máximo ou mínimo.  $Y_v$ é o valor máximo ou mínimo da função. </p>
-
-            <h3>V. Eixo de Simetria e Imagem</h3>
-            <p>O <strong>Eixo de Simetria</strong> é a reta vertical $x = X_v$ que divide a parábola em duas metades iguais.  O <strong>Conjunto Imagem (Im(f))</strong> é o conjunto de valores que $y$ pode assumir, determinado por $Y_v$: </p>
-            <ul>
-                <li>Se $a > 0$, Im(f) = $\{ y \in \mathbb{R} \,|\, y \ge Y_v \}$. </li>
-                <li>Se $a < 0$, Im(f) = $\{ y \in \mathbb{R} \,|\, y \le Y_v \}$. </li>
+                <li><strong>Coeficiente a:</strong> Define a <strong>concavidade</strong> da parábola.  Se $a > 0$, a concavidade é voltada para <strong>cima</strong> (feliz 😊).  Se $a < 0$, a concavidade é voltada para <strong>baixo</strong> (triste 😟). </li>
+                <li><strong>Coeficiente c:</strong> Indica o ponto onde a parábola <strong>corta o eixo y</strong>, que é o ponto $(0, c)$. </li>
             </ul>
 
+            <h3>Calculando as Raízes (Zeros da Função)</h3>
+            <p>As <strong>raízes</strong> são os valores de $x$ para os quais $f(x) = 0$. São os pontos onde a parábola corta o <strong>eixo x</strong>.  Para encontrá-las, usamos a famosa <strong>Fórmula de Bhaskara</strong>. </p>
+            <ol>
+                <li><strong>Calcular o Discriminante (Delta):</strong> $$\Delta = b^2 - 4ac$$
+                    <ul>
+                        <li>Se $\Delta > 0$, a função tem <strong>duas raízes reais e distintas</strong>. </li>
+                        <li>Se $\Delta = 0$, a função tem <strong>uma raiz real</strong> (ou duas raízes iguais). </li>
+                        <li>Se $\Delta < 0$, a função <strong>não tem raízes reais</strong>. </li>
+                    </ul>
+                </li>
+                <li><strong>Calcular as Raízes:</strong> $$x = \frac{-b \pm \sqrt{\Delta}}{2a}$$ </li>
+            </ol>
+
+            <h3>O Vértice da Parábola</h3>
+            <p>O <strong>vértice</strong> é o ponto mais importante da parábola, representando o ponto de <strong>mínimo</strong> (se $a > 0$) ou de <strong>máximo</strong> (se $a < 0$).  Suas coordenadas $(X_v, Y_v)$ são: </p>
+            <ul>
+                <li>Coordenada X do Vértice: $X_v = \frac{-b}{2a}$</li>
+                <li>Coordenada Y do Vértice: $Y_v = \frac{-\Delta}{4a}$</li>
+            </ul>
         </article>
 
         <article>
-            <h2>3. Atividades e Problemas</h2>
-            <h4>Problemas de Fixação</h4>
+            <h2>3. Atividades e Exercícios</h2>
+            <h3>Exercícios de Fixação</h3>
             <ol>
-                <li>(Múltipla Escolha) O vértice da parábola $y = -2x^2 + 4x + 2$ é o ponto: <br> a) (1, 4) b) (-1, 4) c) (1, -4) d) (2, 2)</li>
-                <li>(Preenchimento) A função $f(x) = x^2 - 8x + 15$ possui concavidade para __________, e suas raízes são ______ e ______.</li>
-                <li>(Discursiva) Determine o conjunto imagem da função $f(x) = -x^2 + 6x - 5$. </li>
-                <li>(Discursiva) Para que valores de $k$ a função $f(x) = kx^2 - 2x + 1$ não possui raízes reais?</li>
+                <li>(Múltipla Escolha) Qual das funções a seguir NÃO é uma função do segundo grau? <br>
+                    a) $f(x) = 3x^2 - 1$<br>
+                    b) $f(x) = 5 - x^2$<br>
+                    c) $f(x) = x(x - 1)$<br>
+                    d) $f(x) = 2x + 7$</li>
+                <li>(Discursiva) Encontre as coordenadas do vértice da função $f(x) = 2x^2 - 4x + 1$. </li>
+                <li>Calcule as raízes (se existirem) da função $g(x) = x^2 - x - 12$.</li>
             </ol>
+            
+            <h3>Exercícios de Aplicação</h3>
+            <ol>
+                <li>O custo de produção de $x$ sapatos é dado pela função $C(x) = x^2 - 40x + 410$. Quantos sapatos devem ser produzidos para que o custo seja mínimo? E qual é esse custo mínimo? </li>
+                <li>Uma bola é chutada a partir do chão, e sua altura $h$ em função do tempo $t$ (em segundos) é dada por $h(t) = -5t^2 + 20t$. Depois de quanto tempo a bola retornará ao chão? </li>
+            </ol>
+        </article>
+        
+        <article>
+            <h2>4. Recursos Adicionais e Complementares</h2>
+            <h3>Glossário Rápido</h3>
+            <ul>
+                <li><strong>Função Quadrática:</strong> Função na forma $f(x) = ax^2 + bx + c$. </li>
+                <li><strong>Parábola:</strong> Curva que representa o gráfico da função quadrática. </li>
+                <li><strong>Vértice:</strong> Ponto de máximo ou mínimo da parábola.</li>
+                <li><strong>Raízes (ou Zeros):</strong> Valores de $x$ onde o gráfico corta o eixo $x$ ($f(x)=0$). </li>
+                <li><strong>Concavidade:</strong> A direção para a qual a parábola se abre (para cima ou para baixo). </li>
+                <li><strong>Discriminante (Δ):</strong> Valor ($b^2-4ac$) que indica o número de raízes reais da função. </li>
+            </ul>
 
-            <details>
-                <summary>Mostrar Gabarito</summary>
-                <ol>
-                    <li><strong>a) (1, 4)</strong>.  Res: $X_v = -4 / (2 \cdot -2) = 1$; $Y_v = -2(1)^2 + 4(1) + 2 = 4$.</li>
-                    <li>Concavidade para <strong>cima</strong>, raízes <strong>3</strong> e <strong>5</strong>. </li>
-                    <li>Im(f) = $\{ y \in \mathbb{R} \,|\, y \le 4 \}$.  Res: $Y_v = -(6^2 - 4(-1)(-5)) / (4(-1)) = -16 / -4 = 4$.  Como $a<0$, imagem é $y \le 4$. </li>
-                    <li>$k > 1$.  Res: Para não ter raiz real, $\Delta < 0 \Rightarrow (-2)^2 - 4(k)(1) < 0 \Rightarrow 4 - 4k < 0 \Rightarrow k > 1$. </li>
-                </ol>
-            </details>
+            <h3>Materiais Complementares</h3>
+            <ul>
+                <li><strong>Vídeos:</strong> Khan Academy (Função Quadrática), Matemática Rio com Prof. Rafael Procopio (YouTube). </li>
+                <li><strong>Sites:</strong> Brasil Escola, Mundo Educação. </li>
+                <li><strong>Livros:</strong> Livros didáticos de Gelson Iezzi, Manoel Paiva ou Dante. </li>
+            </ul>
         </article>
 
     </div>
 
     <canvas id="matrixCanvas"></canvas>
-    <script src="../../matrix-rain.js" defer></script>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Nexus. Todos os direitos reservados.</p>
-            <p><a href="../../sobre.html">Sobre o Nexus</a></p>
-        </div>
-    </footer>
-
 </div>
 
-<div id="theme-config-icon" title="Configurar Tema">⚙️</div>
-<div id="theme-selector-panel" class="hidden">
-    <h3>Escolha um Tema:</h3>
-    <button data-theme="theme-default" title="Tema Green Circuit">Green Circuit</button>
-    <button data-theme="theme-digital-blue-green" title="Tema Digital Blue-Green">Digital Blue-Green</button>
-    <button data-theme="theme-retro-terminal" title="Tema Retro Terminal">Retro Terminal</button>
-    <button data-theme="theme-light-classic-neon-red" title="Tema Light Classic Neon Red">Light Classic</button>
-    <button data-theme="theme-blue-matrix" title="Tema Endless Blue">Endless Blue</button>
-    <button data-theme="theme-orange-matrix" title="Tema Juicy Orange">Juicy Orange</button>
-</div>
 <script src="../../theme-switcher.js" defer></script>
+<script src="../../matrix-rain.js" defer></script>
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         if (typeof renderMathInElement === 'function') {
@@ -230,126 +228,126 @@
             });
         }
 
-        // --- Interative Plotter Script ---
         const canvas = document.getElementById('parabolaCanvas');
         if (!canvas) return;
-        
         const ctx = canvas.getContext('2d');
-        const inputA = document.getElementById('coeff-a');
-        const inputB = document.getElementById('coeff-b');
-        const inputC = document.getElementById('coeff-c');
-        const plotButton = document.getElementById('plot-button');
-        const infoDiv = document.getElementById('parabola-info');
-        let chart;
+        const width = canvas.width;
+        const height = canvas.height;
 
-        function plotParabola() {
-            let a = parseFloat(inputA.value);
-            const b = parseFloat(inputB.value);
-            const c = parseFloat(inputC.value);
+        const aSlider = document.getElementById('a-slider');
+        const bSlider = document.getElementById('b-slider');
+        const cSlider = document.getElementById('c-slider');
+        const aValueSpan = document.getElementById('a-value');
+        const bValueSpan = document.getElementById('b-value');
+        const cValueSpan = document.getElementById('c-value');
 
-            if (isNaN(a) || isNaN(b) || isNaN(c)) {
-                infoDiv.textContent = "Por favor, insira valores numéricos válidos para a, b e c.";
-                return;
-            }
-            if (a === 0) {
-                a = 0.01; // Prevent division by zero, treat as very flat parabola
-                inputA.value = a;
-                infoDiv.textContent = "O coeficiente 'a' não pode ser zero. Ajustado para 0.01.";
-            } else {
-                 infoDiv.textContent = "";
-            }
+        const scale = 25;
+        const originX = width / 2;
+        const originY = height / 2;
 
-            const delta = b * b - 4 * a * c;
-            const xv = -b / (2 * a);
-            const yv = a * xv * xv + b * xv + c;
-
-            const dataPoints = [];
-            const range = 10;
-            const step = 0.25;
-            for (let x = xv - range; x <= xv + range; x += step) {
-                const y = a * x * x + b * x + c;
-                dataPoints.push({x: x, y: y});
-            }
-
-            const rootPoints = [];
-            if (delta >= 0) {
-                const x1 = (-b + Math.sqrt(delta)) / (2 * a);
-                const x2 = (-b - Math.sqrt(delta)) / (2 * a);
-                rootPoints.push({x: x1, y: 0});
-                if (delta > 0) {
-                    rootPoints.push({x: x2, y: 0});
-                }
-            }
+        function drawAxes() {
+            ctx.strokeStyle = '#ccc';
+            ctx.lineWidth = 1;
             
-            infoDiv.innerHTML = `Vértice: (${xv.toFixed(2)}, ${yv.toFixed(2)})<br>Δ = ${delta.toFixed(2)}`;
-            if(rootPoints.length > 0) {
-                infoDiv.innerHTML += `<br>Raízes: ${rootPoints.map(p => p.x.toFixed(2)).join(', ')}`;
-            } else {
-                infoDiv.innerHTML += `<br>Não possui raízes reais.`;
+            // Grid lines
+            for (let i = originX + scale; i < width; i += scale) { // Vertical lines right
+                ctx.beginPath();
+                ctx.moveTo(i, 0);
+                ctx.lineTo(i, height);
+                ctx.stroke();
+            }
+            for (let i = originX - scale; i > 0; i -= scale) { // Vertical lines left
+                ctx.beginPath();
+                ctx.moveTo(i, 0);
+                ctx.lineTo(i, height);
+                ctx.stroke();
+            }
+            for (let i = originY + scale; i < height; i += scale) { // Horizontal lines down
+                ctx.beginPath();
+                ctx.moveTo(0, i);
+                ctx.lineTo(width, i);
+                ctx.stroke();
+            }
+            for (let i = originY - scale; i > 0; i -= scale) { // Horizontal lines up
+                ctx.beginPath();
+                ctx.moveTo(0, i);
+                ctx.lineTo(width, i);
+                ctx.stroke();
             }
 
-
-            if (chart) {
-                chart.destroy();
-            }
-
-            chart = new Chart(ctx, {
-                type: 'scatter',
-                data: {
-                    datasets: [{
-                        label: `f(x) = ${a}x² + ${b}x + ${c}`,
-                        data: dataPoints,
-                        showLine: true,
-                        borderColor: 'var(--link-color)',
-                        backgroundColor: 'transparent',
-                        pointRadius: 0,
-                        borderWidth: 2
-                    }, {
-                        label: 'Vértice',
-                        data: [{x: xv, y: yv}],
-                        backgroundColor: 'var(--link-hover-color)',
-                        pointRadius: 5,
-                        pointHoverRadius: 7
-                    }, {
-                        label: 'Raízes',
-                        data: rootPoints,
-                        backgroundColor: 'red',
-                        pointRadius: 5,
-                        pointHoverRadius: 7
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    scales: {
-                        x: { 
-                            type: 'linear', 
-                            position: 'bottom',
-                            grid: { color: 'rgba(128, 128, 128, 0.2)' },
-                            ticks: { color: 'var(--secondary-text-color)' }
-                        },
-                        y: { 
-                            grid: { color: 'rgba(128, 128, 128, 0.2)' },
-                            ticks: { color: 'var(--secondary-text-color)' }
-                        }
-                    },
-                    plugins: {
-                        legend: {
-                            labels: {
-                                color: 'var(--main-text-color)'
-                            }
-                        }
-                    }
-                }
-            });
+            // Axes
+            ctx.strokeStyle = '#000';
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            ctx.moveTo(0, originY);
+            ctx.lineTo(width, originY);
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.moveTo(originX, 0);
+            ctx.lineTo(originX, height);
+            ctx.stroke();
         }
 
-        plotButton.addEventListener('click', plotParabola);
-        // Initial plot on page load
-        plotParabola();
+        function drawFunction(a, b, c) {
+            ctx.strokeStyle = 'var(--link-color, #39FF14)';
+            ctx.lineWidth = 2.5;
+            ctx.beginPath();
+
+            for (let px = 0; px < width; px++) {
+                const x = (px - originX) / scale;
+                const y = a * x * x + b * x + c;
+                const py = originY - y * scale;
+
+                if (px === 0) {
+                    ctx.moveTo(px, py);
+                } else {
+                    ctx.lineTo(px, py);
+                }
+            }
+            ctx.stroke();
+        }
+
+        function updateGraph() {
+            const a = parseFloat(aSlider.value);
+            const b = parseFloat(bSlider.value);
+            const c = parseFloat(cSlider.value);
+
+            aValueSpan.textContent = a.toFixed(1);
+            bValueSpan.textContent = b.toFixed(1);
+            cValueSpan.textContent = c.toFixed(1);
+
+            ctx.clearRect(0, 0, width, height);
+            drawAxes();
+            
+            if (a !== 0) {
+                 drawFunction(a, b, c);
+            }
+        }
+
+        aSlider.addEventListener('input', updateGraph);
+        bSlider.addEventListener('input', updateGraph);
+        cSlider.addEventListener('input', updateGraph);
+
+        updateGraph();
     });
 </script>
 
+<footer>
+    <div class="container">
+        <p>&copy; 2025 Nexus. Todos os direitos reservados.</p>
+        <p><a href="../../sobre.html">Sobre o Nexus</a></p>
+    </div>
+</footer>
 
+<div id="theme-config-icon" title="Configurar Tema">⚙️</div>
+<div id="theme-selector-panel" class="hidden">
+    <h3>Escolha um Tema:</h3>
+    <button data-theme="theme-default" title="Tema Green Circuit">Green Circuit</button>
+    <button data-theme="theme-digital-blue-green" title="Tema Digital Blue-Green">Digital Blue-Green</button>
+    <button data-theme="theme-retro-terminal" title="Tema Retro Terminal">Retro Terminal</button>
+    <button data-theme="theme-light-classic-neon-red" title="Tema Light Classic Neon Red">Light Classic</button>
+    <button data-theme="theme-blue-matrix" title="Tema Endless Blue">Endless Blue</button>
+    <button data-theme="theme-orange-matrix" title="Tema Juicy Orange">Juicy Orange</button>
+</div>
 </body>
 </html>
