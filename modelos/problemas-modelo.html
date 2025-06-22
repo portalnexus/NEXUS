@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <title>Nexus - Problemas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,700;1,400&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="page-wrapper">
+  <nav>
+    <ul>
+      <li><a href="index.html">Página Inicial</a></li>
+      <li><a href="recursos.html">Recursos</a></li>
+      <li><a href="desafios.html">Desafios</a></li>
+      <li><a href="midias.html">Mídias</a></li>
+      <li><a href="sobre.html">Sobre o Nexus</a></li>
+    </ul>
+  </nav>
+  <!-- Adding a placeholder for the container div that will be added later for structure -->
+  <div class="container">
+    <h1>Problemas</h1>
+    <p>Desafie-se com uma variedade de problemas matemáticos, desde níveis básicos até avançados.</p>
+    <section>
+      <h2>Conjunto de Problemas 1: Triângulos Retângulos</h2>
+      <article>
+        <h3>Problema 1.1: O Caminho do Parque</h3>
+        <p>Imagine um parque retangular com 80 metros de comprimento e 60 metros de largura. Um novo caminho reto é construído conectando dois cantos opostos do parque.</p>
+        <p>Qual o comprimento deste novo caminho?</p>
+        <p><em>Dica: O caminho, juntamente com dois lados do parque, forma um triângulo retângulo.</em></p>
+        
+        <h4>Solução (Clique para revelar)</h4>
+        <details>
+          <summary>Mostrar/Ocultar Solução</summary>
+          <p>Seja 'a' o comprimento do parque (80m) e 'b' a largura do parque (60m). O caminho 'c' é a hipotenusa.</p>
+          <p>Usando o teorema de Pitágoras: \(a^2 + b^2 = c^2\)</p>
+          <p>\(80^2 + 60^2 = c^2\)</p>
+          <p>\(6400 + 3600 = c^2\)</p>
+          <p>\(10000 = c^2\)</p>
+          <p>\(c = \sqrt{10000}\)</p>
+          <p>\(c = 100\) metros</p>
+          <p><strong>Resposta:</strong> O novo caminho tem 100 metros de comprimento.</p>
+        </details>
+      </article>
+    </section>
+
+    <section>
+      <h2>Conjunto de Problemas 2: Noções Básicas de Álgebra e Probabilidade</h2>
+      <article>
+        <h3>Problema 2.1: O Número Misterioso</h3>
+        <p>Se você pegar um certo número, multiplicá-lo por 4 e depois adicionar 7, o resultado é 35. Qual é o número?</p>
+        <p><em>Dica: Monte uma equação linear para representar o problema. Deixe 'x' ser o número misterioso.</em></p>
+        
+        <h4>Solução (Clique para revelar)</h4>
+        <details>
+          <summary>Mostrar/Ocultar Solução</summary>
+          <p>Seja 'x' o número misterioso.</p>
+          <p>O problema pode ser escrito como a equação: \[4x + 7 = 35\]</p>
+          <p>Passo 1: Subtraia 7 de ambos os lados para isolar o termo com x.</p>
+          <p>\(4x + 7 - 7 = 35 - 7\)</p>
+          <p>\(4x = 28\)</p>
+          <p>Passo 2: Divida por 4 para resolver para x.</p>
+          <p>\(\frac{4x}{4} = \frac{28}{4}\)</p>
+          <p>\(x = 7\)</p>
+          <p><strong>Resposta:</strong> O número misterioso é 7.</p>
+        </details>
+      </article>
+
+      <article>
+        <h3>Problema 2.2: Jarra de Bolinhas de Gude</h3>
+        <p>Uma jarra contém 5 bolinhas de gude vermelhas, 3 azuis e 2 verdes. Se você pegar uma bolinha da jarra aleatoriamente, qual a probabilidade de pegar uma bolinha azul?</p>
+        <p><em>Dica: Primeiro, encontre o número total de bolinhas na jarra.</em></p>
+        
+        <h4>Solução (Clique para revelar)</h4>
+        <details>
+          <summary>Mostrar/Ocultar Solução</summary>
+          <p>Passo 1: Encontre o número total de bolinhas de gude (o tamanho do espaço amostral).</p>
+          <p>Total de bolinhas = 5 (vermelhas) + 3 (azuis) + 2 (verdes) = 10 bolinhas.</p>
+          <p>Passo 2: Identifique o número de resultados favoráveis (pegar uma bolinha azul).</p>
+          <p>Número de bolinhas azuis = 3.</p>
+          <p>Passo 3: Calcule a probabilidade.</p>
+          <p>\[P(\text{blue}) = \frac{\text{NNúmero de bolinhas azuis}}{\text{Total de bolinhas}}\]</p>
+          <p>\(P(\text{blue}) = \frac{3}{10}\)</p>
+          <p><strong>Resposta:</strong> A probabilidade de pegar uma bolinha azul é \(\frac{3}{10}\) ou 0,3.</p>
+        </details>
+      </article>
+    </section>
+  </div> <!-- /.container -->
+</div> <!-- /#page-wrapper -->
+<canvas id="matrixCanvas"></canvas>
+<script src="matrix-rain.js" defer></script>
+<footer>
+  <div class="container">
+    <p>&copy; 2025 Nexus. Todos os direitos reservados.</p>
+    <p><a href="sobre.html">Sobre o Nexus</a></p>
+  </div>
+</footer>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+            // customised options
+            delimiters: [
+                {left: "\\[", right: "\\]", display: true},  // LaTeX display math
+                {left: "\\(", right: "\\)", display: false}  // LaTeX inline math
+            ],
+            // LaTeX-2TRIG would be another option if more complex macros are needed
+            // trust: (context) => /^https$/.test(context.command), // Not needed for basic math
+            throwOnError: false // So an error in one equation doesn't break all rendering
+        });
+    });
+</script>
+<div id="theme-config-icon" title="Configurar Tema">⚙️</div>
+<div id="theme-selector-panel" class="hidden">
+    <h3>Escolha um Tema:</h3>
+    <button data-theme="theme-default" title="Tema Green Circuit">Green Circuit</button>
+    <button data-theme="theme-digital-blue-green" title="Tema Digital Blue-Green">Digital Blue-Green</button>
+    <button data-theme="theme-retro-terminal" title="Tema Retro Terminal">Retro Terminal</button>
+    <button data-theme="theme-light-classic-neon-red" title="Tema Light Classic Neon Red">Light Classic</button>
+    <button data-theme="theme-blue-matrix" title="Tema Endless Blue">Endless Blue</button>
+    <button data-theme="theme-orange-matrix" title="Tema Juicy Orange">Juicy Orange</button>
+</div>
+<script src="theme-switcher.js" defer></script>
+</body>
+</html>
